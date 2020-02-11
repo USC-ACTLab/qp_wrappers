@@ -1,0 +1,9 @@
+[submodule "eigen"]
+	path = third_party/eigen
+	url = https://gitlab.com/libeigen/eigen
+[submodule "third_party/qpoases-mirror"]
+	path = third_party/qpoases-mirror
+	url = https://github.com/baskinburak/qpoases-mirror
+[submodule "third_party/osqp"]
+	path = third_party/osqp
+	url = https://github.com/oxfordcontrol/osqp
