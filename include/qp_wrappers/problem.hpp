@@ -22,7 +22,7 @@ class qp {
                 variable_count(vc) {
             Q.setConstant(variable_count, variable_count, 0);
             c.setConstant(variable_count, 0);
-            lbx.setConstant(variable_count, std::numeric_limits<T>::min());
+            lbx.setConstant(variable_count, std::numeric_limits<T>::lowest());
             ubx.setConstant(variable_count, std::numeric_limits<T>::max());
             
         }

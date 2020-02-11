@@ -6,6 +6,8 @@ set (CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(third_party/eigen)
 add_subdirectory(third_party/qpoases-mirror)
+
+SET(DLONG OFF CACHE BOOL "")
 add_subdirectory(third_party/osqp)
 
 

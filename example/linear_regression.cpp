@@ -31,10 +31,18 @@ int main() {
         }
     }
 
-    std::cout << std::endl <<  problem.Q/2 << std::endl << std::endl << problem.c << std::endl;
+    std::cout << std::endl <<  problem.Q << std::endl << std::endl << problem.A << std::endl << std::endl << problem.c << std::endl;
 
-    auto solution = qp_wrappers::qpoases::solve(problem);
 
-    qp_wrappers::osqp::solve(problem);
-    std::cout << solution << std::endl;
+    qp_wrappers::qp<double>::Vector solution;
+
+    qp_wrappers::qpoases::solver qpoases;
+    auto ret_val = qpoases.solve(problem, solution);
+    std::cout << "qpoases: " << solution << std::endl;
+
+    qp_wrappers::osqp::solver osqp;
+    ret_val = osqp.solve(problem, solution);
+    std::cout << "osqp: " << solution << std::endl;
+
+    return 0;
 }
