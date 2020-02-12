@@ -56,6 +56,11 @@ class qp {
             return new_problem;
         }
 
+        template<typename S>
+        friend std::ostream& operator<<(std::ostream& os, const qp<S>& problem);
+        template<typename S>
+        friend std::istream& operator>>(std::istream& is, qp<S>& problem);
+
         /*
         * minimize 1/2 x^T Q x + c^T x
         * subject to
@@ -67,6 +72,111 @@ class qp {
         Vector c, lb, ub, lbx, ubx;
         unsigned int variable_count;
 };
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const qp<T>& problem) {
+    auto before_precision = os.precision();
+    
+    os.precision(std::numeric_limits<T>::max_digits10);
+
+    int n = problem.variable_count, m = problem.A.rows();
+    os << n << " " << m << std::endl;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            os << problem.Q(i, j) << " ";
+        }
+        os << std::endl;
+    }
+
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            os << problem.A(i, j) << " ";
+        }
+        os << std::endl;
+    }
+
+    for(int i = 0; i < m; i++) {
+        os << problem.lb(i) << " ";
+    }
+    os << std::endl;
+
+
+    for(int i = 0; i < m; i++) {
+        os << problem.ub(i) << " ";
+    }
+
+    os << std::endl;
+
+    for(int i = 0; i < n; i++) {
+        os << problem.lbx(i) << " ";
+    }
+    os << std::endl;
+
+
+    for(int i = 0; i < n; i++) {
+        os << problem.ubx(i) << " ";
+    }
+    os << std::endl;
+
+    for(int i = 0; i < n; i++) {
+        os << problem.c(i) << " ";
+    }
+    os << std::endl;
+
+    os.precision(before_precision);
+
+    return os;
+}
+
+template<typename T>
+std::istream& operator>>(std::istream& is, qp<T>& problem) {
+    int n,m;
+    is >> n >> m;
+    problem.variable_count = n;
+    problem.Q.resize(n, n);
+    problem.c.resize(n);
+    problem.lbx.resize(n);
+    problem.ubx.resize(n);
+    problem.A.resize(m, n);
+    problem.lb.resize(m);
+    problem.ub.resize(m);
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            is >> problem.Q(i, j);
+        }
+    }
+
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            is >> problem.A(i, j);
+        }
+    }
+
+    for(int i = 0; i < m; i++) {
+        is >> problem.lb(i);
+    }
+
+
+    for(int i = 0; i < m; i++) {
+        is >> problem.ub(i);
+    }
+
+
+    for(int i = 0; i < n; i++) {
+        is >> problem.lbx(i);
+    }
+
+
+    for(int i = 0; i < n; i++) {
+        is >> problem.ubx(i);
+    }
+
+    for(int i = 0; i < n; i++) {
+        is >> problem.c(i);
+    }
+
+    return is;
+}
 
 }
 

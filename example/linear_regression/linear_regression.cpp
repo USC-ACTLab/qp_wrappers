@@ -34,7 +34,6 @@ int main() {
 
     std::cout << std::endl <<  problem.Q << std::endl << std::endl << problem.A << std::endl << std::endl << problem.c << std::endl;
 
-
     qp_wrappers::qp<double>::Vector solution;
 
     qp_wrappers::qpoases::solver qpoases;

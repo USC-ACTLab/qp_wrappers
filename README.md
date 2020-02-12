@@ -1,5 +1,6 @@
 # requires
 - boost
+- gmp library
 
 
 # to compile & run the example code for linear regression
