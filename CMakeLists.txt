@@ -3,14 +3,13 @@ cmake_minimum_required(VERSION 3.10)
 project(qp_wrappers)
 set (CMAKE_CXX_STANDARD 14)
 
-
 add_subdirectory(third_party/eigen)
 add_subdirectory(third_party/qpoases-mirror)
 
-SET(DLONG OFF CACHE BOOL "")
+SET(DLONG OFF CACHE BOOL "osqp index type (ON for long long int, OFF for int)")
 add_subdirectory(third_party/osqp)
 
-find_package(CGAL REQUIRED QUIET OPTIONAL_COMPONENTS Core)
+find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
 
 add_library(qp_wrappers INTERFACE)
 target_include_directories(

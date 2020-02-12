@@ -7,3 +7,9 @@
 [submodule "third_party/osqp"]
 	path = third_party/osqp
 	url = https://github.com/baskinburak/osqp
+[submodule "third_party/cgal"]
+	path = third_party/cgal
+	url = https://github.com/CGAL/cgal
+[submodule "third_party/boost"]
+	path = third_party/boost
+	url = https://github.com/boostorg/boost
