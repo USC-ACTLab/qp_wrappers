@@ -1,6 +1,7 @@
 #include <qp_wrappers/qpoases.hpp>
 #include <qp_wrappers/osqp.hpp>
 #include <qp_wrappers/problem.hpp>
+#include <qp_wrappers/cgal.hpp>
 #include <iostream>
 
 int main() {
@@ -43,6 +44,10 @@ int main() {
     qp_wrappers::osqp::solver osqp;
     ret_val = osqp.solve(problem, solution);
     std::cout << "osqp: " << solution << std::endl;
+
+    qp_wrappers::cgal::solver cgal;
+    ret_val = cgal.solve(problem, solution);
+    std::cout << "cgal: " << solution << std::endl;
 
     return 0;
 }
