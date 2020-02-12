@@ -21,5 +21,5 @@ target_include_directories(
     ${CGAL_INCLUDE_DIRECTORIES})
 target_link_libraries(qp_wrappers INTERFACE eigen qpOASES osqp CGAL::CGAL)
 
-add_executable(linear_regression example/linear_regression.cpp)
+add_executable(linear_regression example/linear_regression/linear_regression.cpp)
 target_link_libraries(linear_regression qp_wrappers)
