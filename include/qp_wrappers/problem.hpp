@@ -15,6 +15,8 @@ class qp {
         using Vector = Eigen::Matrix<T, Eigen::Dynamic, 1>;
         using RowVector = Eigen::Matrix<T, 1, Eigen::Dynamic>;
 
+        qp() {}
+
         qp(unsigned int vc):
                 A(0, vc),
                 lb(0),

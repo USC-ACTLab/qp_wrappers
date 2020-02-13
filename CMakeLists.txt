@@ -22,3 +22,6 @@ target_link_libraries(qp_wrappers INTERFACE eigen qpOASES osqp CGAL::CGAL)
 
 add_executable(linear_regression example/linear_regression/linear_regression.cpp)
 target_link_libraries(linear_regression qp_wrappers)
+
+add_executable(general_solver example/general_qp_solver/solver.cpp)
+target_link_libraries(general_solver qp_wrappers)

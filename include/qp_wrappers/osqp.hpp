@@ -6,6 +6,7 @@
 #include "problem.hpp"
 #include <osqp.h>
 #include <iostream>
+#include "types.hpp"
 
 namespace qp_wrappers {
     namespace osqp {
