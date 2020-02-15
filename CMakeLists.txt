@@ -6,9 +6,12 @@ set (CMAKE_CXX_STANDARD 14)
 add_subdirectory(third_party/eigen)
 add_subdirectory(third_party/qpoases-mirror)
 
+SET(DFLOAT OFF CACHE BOOL "osqp data type(OFF for double, ON for float)")
 SET(DLONG OFF CACHE BOOL "osqp index type (ON for long long int, OFF for int)")
 add_subdirectory(third_party/osqp)
 
+# SET(NDEBUG ON CACHE BOOL "cgal qp solver perf on")
+# SET(CGAL_QP_NO_ASSERTIONS ON CACHE BOOL "cgal qp solver perf on")
 find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
 
 add_library(qp_wrappers INTERFACE)
@@ -19,6 +22,7 @@ target_include_directories(
     third_party/osqp/include
     ${CGAL_INCLUDE_DIRECTORIES})
 target_link_libraries(qp_wrappers INTERFACE eigen qpOASES osqp CGAL::CGAL)
+target_compile_definitions(qp_wrappers INTERFACE CGAL_QP_NO_ASSERTIONS)
 
 add_executable(linear_regression example/linear_regression/linear_regression.cpp)
 target_link_libraries(linear_regression qp_wrappers)

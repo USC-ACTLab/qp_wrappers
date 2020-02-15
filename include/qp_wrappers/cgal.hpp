@@ -6,6 +6,7 @@
 #include <CGAL/QP_models.h>
 #include <CGAL/QP_functions.h>
 #include <limits>
+#include <CGAL/MP_Float.h>
 
 namespace qp_wrappers{
 
@@ -20,8 +21,9 @@ namespace cgal {
 
             template<typename T>
             return_type solve(const qp<T>& problem, typename qp<T>::Vector& primal_solution) {
+                typedef CGAL::MP_Float ET;
                 typedef CGAL::Quadratic_program<T> Program;
-                typedef CGAL::Quadratic_program_solution<T> Solution;
+                typedef CGAL::Quadratic_program_solution<ET> Solution;
 
                 typename qp<T>::Matrix A = problem.A;
                 A.conservativeResize(A.rows() * 2, A.cols());
@@ -30,6 +32,8 @@ namespace cgal {
                 ub.conservativeResize(ub.rows() * 2, 1);
                 ub.block(problem.ub.rows(), 0, problem.ub.rows(), 1) = -1 * problem.lb;
 
+                // std::cout << problem.A.rows() << " " << problem.A.cols() << " " 
+                        //   << problem.variable_count << " " << A.rows() << " " << A.cols() << " " << ub.rows() << std::endl;
 
                 Program qpr(CGAL::SMALLER, false, std::numeric_limits<T>::lowest(), false, std::numeric_limits<T>::max());
                 
@@ -39,8 +43,15 @@ namespace cgal {
                     }
 
                     qpr.set_c(i, problem.c(i));
-                    qpr.set_l(i, false, problem.lbx(i));                    
-                    qpr.set_u(i, false, problem.ubx(i));
+                    if(problem.lbx(i) <= std::numeric_limits<T>::lowest()) {
+                        qpr.set_l(i, false);
+                    } else
+                        qpr.set_l(i, true, problem.lbx(i));
+
+                    if(problem.ubx(i) >= std::numeric_limits<T>::max()) {
+                        qpr.set_u(i, false);
+                    } else
+                        qpr.set_u(i, true, problem.ubx(i));
                     
                 }
 
@@ -54,13 +65,12 @@ namespace cgal {
 
                 qpr.set_c0(0);
 
-                // std::cout << qpr << std::endl;
 
                 // std::cout << "n: " << qpr.get_n() << std::endl;
                 // std::cout << "m: " << qpr.get_m() << std::endl;
                 // std::cout << "A: " << std::endl;
                 // for(int i = 0; i < qpr.get_m(); i++) {
-                //     for(int j = 0; qpr.get_n(); j++) {
+                //     for(int j = 0; j < qpr.get_n(); j++) {
                 //         std::cout << *(*(qpr.get_a() + j) + i) << " ";
                 //     }
                 //     std::cout << std::endl;
@@ -97,7 +107,7 @@ namespace cgal {
                 // }
                 // std::cout << std::endl;
 
-                Solution s = CGAL::solve_quadratic_program(qpr, T());
+                Solution s = CGAL::solve_quadratic_program(qpr, ET());
                 assert(s.solves_quadratic_program(qpr));
 
                 if(s.is_infeasible())
@@ -109,7 +119,8 @@ namespace cgal {
                     * hate to_double!
                     */
                     const auto& quot = *(s.variable_values_begin() + i);
-                    primal_solution(i) = quot.numerator() / quot.denominator();
+                    // std::cout << quot << std::endl;
+                    primal_solution(i) = CGAL::to_double(quot);
                 }
 
                 return success;

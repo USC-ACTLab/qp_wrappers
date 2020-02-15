@@ -19,6 +19,10 @@ namespace qp_wrappers {
 
                     settings->alpha = 1;
                     settings->verbose = false;
+                    settings->max_iter = std::numeric_limits<c_int>::max();
+                    settings->polish = 1;
+                    settings->polish_refine_iter = 100;
+                    // std::cout << settings->linsys_solver << std::endl;
                 }
 
                 ~solver() {
@@ -96,15 +100,21 @@ namespace qp_wrappers {
                     // Solve Problem
                     osqp_solve(work);
 
+                    // std::cout << "osqp status_val: " << work->info->status_val << std::endl;
+                    if(work->info->status_val == OSQP_SOLVED) {
+                        primal_solution.resize(problem.variable_count);
+                        for(int i = 0; i < data->n; i++)
+                            primal_solution(i) = work->solution->x[i];
+
+                        return success;
+                    } else {
+                        return infeasible;
+                    }
+
                     // cleanup
                     c_free(data->A);
                     c_free(data->P);
-
-                    primal_solution.resize(problem.variable_count);
-                    for(int i = 0; i < data->n; i++)
-                        primal_solution(i) = work->solution->x[i];
-
-                    return success;
+                    c_free(data);
                 }
             private:
                 OSQPSettings* settings;
