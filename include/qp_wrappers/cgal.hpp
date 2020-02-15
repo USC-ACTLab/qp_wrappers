@@ -25,12 +25,30 @@ namespace cgal {
                 typedef CGAL::Quadratic_program<T> Program;
                 typedef CGAL::Quadratic_program_solution<ET> Solution;
 
-                typename qp<T>::Matrix A = problem.A;
-                A.conservativeResize(A.rows() * 2, A.cols());
-                A.block(problem.A.rows(), 0, problem.A.rows(), problem.A.cols()) = -1 * problem.A;
-                typename qp<T>::Vector ub = problem.ub;
-                ub.conservativeResize(ub.rows() * 2, 1);
-                ub.block(problem.ub.rows(), 0, problem.ub.rows(), 1) = -1 * problem.lb;
+                typename qp<T>::Matrix A(problem.A.rows() * 2, problem.variable_count);
+                typename qp<T>::Vector ub(problem.A.rows() * 2);
+                std::vector<CGAL::Comparison_result> comparisons(problem.A.rows() * 2);
+                int constraint_count = 0;
+                for(int i = 0; i < problem.A.rows(); i++) {
+                    if(problem.lb(i) == problem.ub(i)) {
+                        comparisons[constraint_count] = CGAL::EQUAL;
+                        A.block(constraint_count, 0, 1, problem.variable_count) = problem.A.block(i, 0, 1, problem.variable_count);
+                        ub(constraint_count) = problem.ub(i);
+                        constraint_count++;
+                    } else {
+                        comparisons[constraint_count] = CGAL::SMALLER;
+                        A.block(constraint_count, 0, 1, problem.variable_count) = problem.A.block(i, 0, 1, problem.variable_count);
+                        ub(constraint_count) = problem.ub(i);
+                        constraint_count++;
+
+                        comparisons[constraint_count] = CGAL::SMALLER;
+                        A.block(constraint_count, 0, 1, problem.variable_count) = -1 * problem.A.block(i, 0, 1, problem.variable_count);
+                        ub(constraint_count) = -1 * problem.lb(i);
+                        constraint_count++;
+                    }
+                }
+                A.conservativeResize(constraint_count, A.cols());
+                ub.conservativeResize(constraint_count);
 
                 // std::cout << problem.A.rows() << " " << problem.A.cols() << " " 
                         //   << problem.variable_count << " " << A.rows() << " " << A.cols() << " " << ub.rows() << std::endl;
@@ -60,6 +78,7 @@ namespace cgal {
                         qpr.set_a(j, i, A(i, j));
                     }
                     qpr.set_b(i, ub(i));
+                    qpr.set_r(i, comparisons[i]);
                     
                 }
 
