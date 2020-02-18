@@ -3,48 +3,6 @@ cmake_minimum_required(VERSION 3.10)
 project(qp_wrappers)
 set (CMAKE_CXX_STANDARD 14)
 
-add_subdirectory(third_party/eigen)
-add_subdirectory(third_party/qpoases-mirror)
-
-SET(DFLOAT OFF CACHE BOOL "osqp data type(OFF for double, ON for float)")
-SET(DLONG OFF CACHE BOOL "osqp index type (ON for long long int, OFF for int)")
-add_subdirectory(third_party/osqp)
-
-# SET(NDEBUG ON CACHE BOOL "cgal qp solver perf on")
-# SET(CGAL_QP_NO_ASSERTIONS ON CACHE BOOL "cgal qp solver perf on")
-find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
-
-include(cmake/FindCPLEX.cmake)
-
-add_library(qp_wrappers INTERFACE)
-target_include_directories(
-  qp_wrappers
-  INTERFACE 
-  include 
-  third_party/qpoases-mirror/include
-  third_party/osqp/include
-  ${CGAL_INCLUDE_DIRECTORIES}
-)
-target_link_libraries(
-  qp_wrappers 
-  INTERFACE 
-  eigen 
-  qpOASES 
-  osqp 
-  CGAL::CGAL
-  # cplex-library
-  # cplex-concert
-  ilocplex
-  # cplex-cp
-  ${CMAKE_DL_LIBS}
-)
-target_compile_definitions(
-  qp_wrappers 
-  INTERFACE 
-  CGAL_QP_NO_ASSERTIONS
-)
-
-
 if (GUROBI_INCLUDE_DIR)
   # in cache already
   set(GUROBI_FOUND TRUE)
@@ -99,8 +57,42 @@ mark_as_advanced(GUROBI_INCLUDE_DIR GUROBI_LIBRARY GUROBI_CXX_LIBRARY)
 
 endif(GUROBI_INCLUDE_DIR)
 
-include_directories( ${GUROBI_INCLUDE_DIRS} ) 
-target_link_libraries(qp_wrappers INTERFACE "-I /Library/gurobi901/mac64/include -L /Library/gurobi901/mac64/lib -lgurobi_c++ -lgurobi90 -lm") 
+add_subdirectory(third_party/eigen)
+add_subdirectory(third_party/qpoases-mirror)
+
+SET(DFLOAT OFF CACHE BOOL "osqp data type(OFF for double, ON for float)")
+SET(DLONG OFF CACHE BOOL "osqp index type (ON for long long int, OFF for int)")
+add_subdirectory(third_party/osqp)
+
+# SET(NDEBUG ON CACHE BOOL "cgal qp solver perf on")
+# SET(CGAL_QP_NO_ASSERTIONS ON CACHE BOOL "cgal qp solver perf on")
+find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
+
+add_library(qp_wrappers INTERFACE)
+target_include_directories(
+  qp_wrappers
+  INTERFACE 
+  include 
+  third_party/qpoases-mirror/include
+  third_party/osqp/include
+  ${CGAL_INCLUDE_DIRECTORIES}
+  ${GUROBI_INCLUDE_DIRS}
+)
+target_link_libraries(
+  qp_wrappers 
+  INTERFACE 
+  eigen 
+  qpOASES 
+  osqp 
+  CGAL::CGAL
+  ${CMAKE_DL_LIBS}
+  "-I /Library/gurobi901/mac64/include -L /Library/gurobi901/mac64/lib -lgurobi_c++ -lgurobi90 -lm"
+)
+target_compile_definitions(
+  qp_wrappers 
+  INTERFACE 
+  CGAL_QP_NO_ASSERTIONS
+)
 
 add_executable(
   linear_regression 
