@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/third_party/eigen/test/nesting_ops.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "nesting_ops_3"
+	}
+}

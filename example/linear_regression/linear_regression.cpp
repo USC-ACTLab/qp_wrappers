@@ -2,6 +2,7 @@
 #include <qp_wrappers/osqp.hpp>
 #include <qp_wrappers/problem.hpp>
 #include <qp_wrappers/cgal.hpp>
+#include <qp_wrappers/gurobi.hpp>
 #include <iostream>
 #include <chrono>
 
@@ -54,9 +55,17 @@ int main() {
     std::cout << "cgal: " << cgal.solve(problem, cgal_soln) << std::endl << cgal_soln << std::endl;
     auto cgal_end = std::chrono::system_clock::now();
 
+    auto gurobi_start = std::chrono::system_clock::now();
+    qp_wrappers::qp<double>::Vector gurobi_soln;
+    qp_wrappers::gurobi::solver gurobi;
+    std::cout << "gurobi: " << gurobi.solve(problem, gurobi_soln) << std::endl << gurobi_soln << std::endl<< std::endl<< std::endl<< std::endl;
+    auto gurobi_end = std::chrono::system_clock::now();
+
+
     std::cout << "cgal: " <<  std::chrono::duration<double>(cgal_end - cgal_start).count() << std::endl << 
                  "osqp: " <<  std::chrono::duration<double>(osqp_end - osqp_start).count() << std::endl << 
-                 "qpoases: " <<  std::chrono::duration<double>(qpoases_end - qpoases_start).count() << std::endl;
+                 "qpoases: " <<  std::chrono::duration<double>(qpoases_end - qpoases_start).count() << std::endl <<
+                 "gurobi: " <<  std::chrono::duration<double>(gurobi_end - gurobi_start).count() << std::endl;
 
 
     return 0;

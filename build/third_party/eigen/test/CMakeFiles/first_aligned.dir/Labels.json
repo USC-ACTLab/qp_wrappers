@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/third_party/eigen/test/first_aligned.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "first_aligned"
+	}
+}

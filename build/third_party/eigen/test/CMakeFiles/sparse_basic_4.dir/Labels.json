@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/third_party/eigen/test/sparse_basic.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "sparse_basic_4"
+	}
+}

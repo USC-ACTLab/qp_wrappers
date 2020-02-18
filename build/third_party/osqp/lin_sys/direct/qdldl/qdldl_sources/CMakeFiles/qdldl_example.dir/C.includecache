@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../third_party/osqp/lin_sys/direct/qdldl/qdldl_sources/include/qdldl.h
+qdldl_types.h
+../third_party/osqp/lin_sys/direct/qdldl/qdldl_sources/include/qdldl_types.h
+
+../third_party/osqp/lin_sys/direct/qdldl/qdldl_sources/include/qdldl_types.h
+limits.h
+-
+
+/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/third_party/osqp/lin_sys/direct/qdldl/qdldl_sources/examples/example.c
+qdldl.h
+/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/third_party/osqp/lin_sys/direct/qdldl/qdldl_sources/examples/qdldl.h
+stdlib.h
+-
+stdio.h
+-
+

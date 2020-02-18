@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/third_party/eigen/test/type_alias.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "type_alias"
+	}
+}

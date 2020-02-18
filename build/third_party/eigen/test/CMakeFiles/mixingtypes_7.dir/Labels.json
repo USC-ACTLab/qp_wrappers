@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/third_party/eigen/test/mixingtypes.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "mixingtypes_7"
+	}
+}

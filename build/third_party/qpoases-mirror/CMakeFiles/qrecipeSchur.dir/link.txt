@@ -1,0 +1,1 @@
+/usr/bin/g++   -D__NO_COPYRIGHT__ -Wall -pedantic -Wfloat-equal -Wshadow -DLINUX -g -O3 -finline-functions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib CMakeFiles/qrecipeSchur.dir/examples/qrecipeSchur.cpp.o  -o bin/qrecipeSchur  libs/libqpOASES.a 

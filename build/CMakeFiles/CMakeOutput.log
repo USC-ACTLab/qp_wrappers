@@ -1,0 +1,1438 @@
+The system is: Darwin - 19.3.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/3.16.4/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is AppleClang, found in "/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/3.16.4/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_37945/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_37945.dir/build.make CMakeFiles/cmTC_37945.dir/build
+Building C object CMakeFiles/cmTC_37945.dir/testCCompiler.c.o
+/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_37945.dir/testCCompiler.c.o   -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_37945
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37945.dir/link.txt --verbose=1
+/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_37945.dir/testCCompiler.c.o  -o cmTC_37945 
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3f460/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3f460.dir/build.make CMakeFiles/cmTC_3f460.dir/build
+Building C object CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -v -Wl,-v -o CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCCompilerABI.c
+Apple clang version 11.0.0 (clang-1100.0.33.8)
+Target: x86_64-apple-darwin19.3.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -ggnu-pubnames -target-linker-version 512.4 -v -coverage-notes-file /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-extra-semi-stmt -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.15.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 11.0.0 (clang-1100.0.33.8) default target x86_64-apple-darwin19.3.0
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_3f460
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f460.dir/link.txt --verbose=1
+/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib -v -Wl,-v CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o  -o cmTC_3f460 
+Apple clang version 11.0.0 (clang-1100.0.33.8)
+Target: x86_64-apple-darwin19.3.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o cmTC_3f460 -L/usr/local/opt/libffi/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-512.4
+BUILD 05:06:53 Aug 16 2019
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/local/opt/libffi/lib
+	/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include]
+    add: [/Library/Developer/CommandLineTools/usr/include]
+    add: [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+  end of search list found
+  collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+  collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+  implicit include dirs: [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include;/Library/Developer/CommandLineTools/usr/include;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_3f460/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3f460.dir/build.make CMakeFiles/cmTC_3f460.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -v -Wl -v -o CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Apple clang version 11.0.0 (clang-1100.0.33.8)]
+  ignore line: [Target: x86_64-apple-darwin19.3.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -ggnu-pubnames -target-linker-version 512.4 -v -coverage-notes-file /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-extra-semi-stmt -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.15.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 11.0.0 (clang-1100.0.33.8) default target x86_64-apple-darwin19.3.0]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_3f460]
+  ignore line: [/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f460.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -L/usr/local/opt/libffi/lib -v -Wl -v CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o  -o cmTC_3f460 ]
+  ignore line: [Apple clang version 11.0.0 (clang-1100.0.33.8)]
+  ignore line: [Target: x86_64-apple-darwin19.3.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o cmTC_3f460 -L/usr/local/opt/libffi/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.15.0] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_3f460] ==> ignore
+    arg [-L/usr/local/opt/libffi/lib] ==> dir [/usr/local/opt/libffi/lib]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_3f460.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/local/opt/libffi/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib]
+  Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/local/opt/libffi/lib] ==> [/usr/local/opt/libffi/lib]
+  collapse library dir [/usr/local/opt/libffi/lib] ==> [/usr/local/opt/libffi/lib]
+  collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib]
+  collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks]
+  implicit libs: []
+  implicit dirs: [/usr/local/opt/libffi/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib]
+  implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_95eaf/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_95eaf.dir/build.make CMakeFiles/cmTC_95eaf.dir/build
+Building CXX object CMakeFiles/cmTC_95eaf.dir/testCXXCompiler.cxx.o
+/usr/bin/g++    -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_95eaf.dir/testCXXCompiler.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_95eaf
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95eaf.dir/link.txt --verbose=1
+/usr/bin/g++    -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_95eaf.dir/testCXXCompiler.cxx.o  -o cmTC_95eaf 
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ca936/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_ca936.dir/build.make CMakeFiles/cmTC_ca936.dir/build
+Building CXX object CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/g++    -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -v -Wl,-v -o CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Apple clang version 11.0.0 (clang-1100.0.33.8)
+Target: x86_64-apple-darwin19.3.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -ggnu-pubnames -target-linker-version 512.4 -v -coverage-notes-file /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1 -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-extra-semi-stmt -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.15.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 11.0.0 (clang-1100.0.33.8) default target x86_64-apple-darwin19.3.0
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/c++/v1"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1
+ /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include
+ /Library/Developer/CommandLineTools/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking CXX executable cmTC_ca936
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca936.dir/link.txt --verbose=1
+/usr/bin/g++    -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib -v -Wl,-v CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ca936 
+Apple clang version 11.0.0 (clang-1100.0.33.8)
+Target: x86_64-apple-darwin19.3.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o cmTC_ca936 -L/usr/local/opt/libffi/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-512.4
+BUILD 05:06:53 Aug 16 2019
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
+Library search paths:
+	/usr/local/opt/libffi/lib
+	/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1]
+    add: [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include]
+    add: [/Library/Developer/CommandLineTools/usr/include]
+    add: [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+  end of search list found
+  collapse include dir [/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1] ==> [/Library/Developer/CommandLineTools/usr/include/c++/v1]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include]
+  collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
+  collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+  implicit include dirs: [/Library/Developer/CommandLineTools/usr/include/c++/v1;/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include;/Library/Developer/CommandLineTools/usr/include;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_ca936/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_ca936.dir/build.make CMakeFiles/cmTC_ca936.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/g++    -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -v -Wl -v -o CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Apple clang version 11.0.0 (clang-1100.0.33.8)]
+  ignore line: [Target: x86_64-apple-darwin19.3.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.15.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-sdk-version=10.15 -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -ggnu-pubnames -target-linker-version 512.4 -v -coverage-notes-file /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -stdlib=libc++ -internal-isystem /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1 -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-extra-semi-stmt -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.15.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 11.0.0 (clang-1100.0.33.8) default target x86_64-apple-darwin19.3.0]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/c++/v1"]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/Library/Frameworks"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include]
+  ignore line: [ /Library/Developer/CommandLineTools/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include]
+  ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks (framework directory)]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_ca936]
+  ignore line: [/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca936.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/g++    -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl -search_paths_first -Wl -headerpad_max_install_names -L/usr/local/opt/libffi/lib -v -Wl -v CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ca936 ]
+  ignore line: [Apple clang version 11.0.0 (clang-1100.0.33.8)]
+  ignore line: [Target: x86_64-apple-darwin19.3.0]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.15.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -o cmTC_ca936 -L/usr/local/opt/libffi/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a]
+    arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-lto_library] ==> ignore, skip following value
+    arg [/Library/Developer/CommandLineTools/usr/lib/libLTO.dylib] ==> skip value of -lto_library
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.15.0] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ca936] ==> ignore
+    arg [-L/usr/local/opt/libffi/lib] ==> dir [/usr/local/opt/libffi/lib]
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_ca936.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/local/opt/libffi/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib]
+  Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/local/opt/libffi/lib] ==> [/usr/local/opt/libffi/lib]
+  collapse library dir [/usr/local/opt/libffi/lib] ==> [/usr/local/opt/libffi/lib]
+  collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib]
+  collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks]
+  implicit libs: [c++]
+  implicit dirs: [/usr/local/opt/libffi/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib]
+  implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks]
+
+
+Performing C++ SOURCE FILE Test EIGEN_COMPILER_SUPPORT_CPP11 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_59259/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_59259.dir/build.make CMakeFiles/cmTC_59259.dir/build
+Building CXX object CMakeFiles/cmTC_59259.dir/src.cxx.o
+/usr/bin/g++    -DEIGEN_COMPILER_SUPPORT_CPP11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++11 -o CMakeFiles/cmTC_59259.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_59259
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59259.dir/link.txt --verbose=1
+/usr/bin/g++   -DEIGEN_COMPILER_SUPPORT_CPP11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_59259.dir/src.cxx.o  -o cmTC_59259 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_49c39/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_49c39.dir/build.make CMakeFiles/cmTC_49c39.dir/build
+Building CXX object CMakeFiles/cmTC_49c39.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_49c39.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_49c39
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49c39.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_49c39.dir/src.cxx.o  -o cmTC_49c39 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test standard_math_library_linked_to_automatically succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7d7d0/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_7d7d0.dir/build.make CMakeFiles/cmTC_7d7d0.dir/build
+Building CXX object CMakeFiles/cmTC_7d7d0.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -Dstandard_math_library_linked_to_automatically -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_7d7d0.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+/Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx:2:14: warning: ignoring return value of function declared with const attribute [-Wunused-value]
+int main() { std::sin(0.0); std::log(0.0f); }
+             ^~~~~~~~ ~~~
+1 warning generated.
+Linking CXX executable cmTC_7d7d0
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d7d0.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -Dstandard_math_library_linked_to_automatically -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_7d7d0.dir/src.cxx.o  -o cmTC_7d7d0 
+
+
+Source file was:
+#include<cmath>
+int main() { std::sin(0.0); std::log(0.0f); }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_WERROR succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c8f3f/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c8f3f.dir/build.make CMakeFiles/cmTC_c8f3f.dir/build
+Building CXX object CMakeFiles/cmTC_c8f3f.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -DCOMPILER_SUPPORT_WERROR -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Werror -o CMakeFiles/cmTC_c8f3f.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_c8f3f
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8f3f.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -DCOMPILER_SUPPORT_WERROR -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_c8f3f.dir/src.cxx.o  -o cmTC_c8f3f 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_pedantic succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0c819/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_0c819.dir/build.make CMakeFiles/cmTC_0c819.dir/build
+Building CXX object CMakeFiles/cmTC_0c819.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -DCOMPILER_SUPPORT_pedantic -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -pedantic -o CMakeFiles/cmTC_0c819.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_0c819
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c819.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -DCOMPILER_SUPPORT_pedantic -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_0c819.dir/src.cxx.o  -o cmTC_0c819 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wall succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_433aa/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_433aa.dir/build.make CMakeFiles/cmTC_433aa.dir/build
+Building CXX object CMakeFiles/cmTC_433aa.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -DCOMPILER_SUPPORT_Wall -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wall -o CMakeFiles/cmTC_433aa.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_433aa
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_433aa.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -DCOMPILER_SUPPORT_Wall -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_433aa.dir/src.cxx.o  -o cmTC_433aa 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wextra succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bef9c/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bef9c.dir/build.make CMakeFiles/cmTC_bef9c.dir/build
+Building CXX object CMakeFiles/cmTC_bef9c.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -DCOMPILER_SUPPORT_Wextra -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wextra -o CMakeFiles/cmTC_bef9c.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_bef9c
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bef9c.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -DCOMPILER_SUPPORT_Wextra -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_bef9c.dir/src.cxx.o  -o cmTC_bef9c 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wundef succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d8b73/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d8b73.dir/build.make CMakeFiles/cmTC_d8b73.dir/build
+Building CXX object CMakeFiles/cmTC_d8b73.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -DCOMPILER_SUPPORT_Wundef -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wundef -o CMakeFiles/cmTC_d8b73.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_d8b73
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8b73.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -DCOMPILER_SUPPORT_Wundef -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_d8b73.dir/src.cxx.o  -o cmTC_d8b73 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcastalign succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ae03d/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_ae03d.dir/build.make CMakeFiles/cmTC_ae03d.dir/build
+Building CXX object CMakeFiles/cmTC_ae03d.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -DCOMPILER_SUPPORT_Wcastalign -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wcast-align -o CMakeFiles/cmTC_ae03d.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_ae03d
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae03d.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -DCOMPILER_SUPPORT_Wcastalign -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_ae03d.dir/src.cxx.o  -o cmTC_ae03d 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcharsubscripts succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_67f75/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_67f75.dir/build.make CMakeFiles/cmTC_67f75.dir/build
+Building CXX object CMakeFiles/cmTC_67f75.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -DCOMPILER_SUPPORT_Wcharsubscripts -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wchar-subscripts -o CMakeFiles/cmTC_67f75.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_67f75
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67f75.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -DCOMPILER_SUPPORT_Wcharsubscripts -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_67f75.dir/src.cxx.o  -o cmTC_67f75 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wnonvirtualdtor succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1fa00/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_1fa00.dir/build.make CMakeFiles/cmTC_1fa00.dir/build
+Building CXX object CMakeFiles/cmTC_1fa00.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -DCOMPILER_SUPPORT_Wnonvirtualdtor -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wnon-virtual-dtor -o CMakeFiles/cmTC_1fa00.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_1fa00
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fa00.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -DCOMPILER_SUPPORT_Wnonvirtualdtor -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_1fa00.dir/src.cxx.o  -o cmTC_1fa00 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wunusedlocaltypedefs succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_386da/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_386da.dir/build.make CMakeFiles/cmTC_386da.dir/build
+Building CXX object CMakeFiles/cmTC_386da.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -DCOMPILER_SUPPORT_Wunusedlocaltypedefs -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wunused-local-typedefs -o CMakeFiles/cmTC_386da.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_386da
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_386da.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -DCOMPILER_SUPPORT_Wunusedlocaltypedefs -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_386da.dir/src.cxx.o  -o cmTC_386da 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wpointerarith succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_17da9/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_17da9.dir/build.make CMakeFiles/cmTC_17da9.dir/build
+Building CXX object CMakeFiles/cmTC_17da9.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -DCOMPILER_SUPPORT_Wpointerarith -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wpointer-arith -o CMakeFiles/cmTC_17da9.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_17da9
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17da9.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -DCOMPILER_SUPPORT_Wpointerarith -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_17da9.dir/src.cxx.o  -o cmTC_17da9 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wwritestrings succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ca027/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_ca027.dir/build.make CMakeFiles/cmTC_ca027.dir/build
+Building CXX object CMakeFiles/cmTC_ca027.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -DCOMPILER_SUPPORT_Wwritestrings -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wwrite-strings -o CMakeFiles/cmTC_ca027.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_ca027
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca027.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -DCOMPILER_SUPPORT_Wwritestrings -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_ca027.dir/src.cxx.o  -o cmTC_ca027 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wformatsecurity succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fa0f5/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_fa0f5.dir/build.make CMakeFiles/cmTC_fa0f5.dir/build
+Building CXX object CMakeFiles/cmTC_fa0f5.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -DCOMPILER_SUPPORT_Wformatsecurity -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wformat-security -o CMakeFiles/cmTC_fa0f5.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_fa0f5
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa0f5.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -DCOMPILER_SUPPORT_Wformatsecurity -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_fa0f5.dir/src.cxx.o  -o cmTC_fa0f5 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2c56e/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_2c56e.dir/build.make CMakeFiles/cmTC_2c56e.dir/build
+Building CXX object CMakeFiles/cmTC_2c56e.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -DCOMPILER_SUPPORT_Wshorten64to32 -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wshorten-64-to-32 -o CMakeFiles/cmTC_2c56e.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_2c56e
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c56e.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -DCOMPILER_SUPPORT_Wshorten64to32 -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_2c56e.dir/src.cxx.o  -o cmTC_2c56e 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wenumconversion succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_07cc9/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_07cc9.dir/build.make CMakeFiles/cmTC_07cc9.dir/build
+Building CXX object CMakeFiles/cmTC_07cc9.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -DCOMPILER_SUPPORT_Wenumconversion -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wenum-conversion -o CMakeFiles/cmTC_07cc9.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_07cc9
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07cc9.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -DCOMPILER_SUPPORT_Wenumconversion -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_07cc9.dir/src.cxx.o  -o cmTC_07cc9 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcpp11extensions succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9f755/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9f755.dir/build.make CMakeFiles/cmTC_9f755.dir/build
+Building CXX object CMakeFiles/cmTC_9f755.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -DCOMPILER_SUPPORT_Wcpp11extensions -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wc++11-extensions -o CMakeFiles/cmTC_9f755.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_9f755
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f755.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -DCOMPILER_SUPPORT_Wcpp11extensions -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_9f755.dir/src.cxx.o  -o cmTC_9f755 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wdoublepromotion succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b511e/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_b511e.dir/build.make CMakeFiles/cmTC_b511e.dir/build
+Building CXX object CMakeFiles/cmTC_b511e.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -DCOMPILER_SUPPORT_Wdoublepromotion -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wdouble-promotion -o CMakeFiles/cmTC_b511e.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_b511e
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b511e.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -DCOMPILER_SUPPORT_Wdoublepromotion -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_b511e.dir/src.cxx.o  -o cmTC_b511e 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshadow succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_13bce/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_13bce.dir/build.make CMakeFiles/cmTC_13bce.dir/build
+Building CXX object CMakeFiles/cmTC_13bce.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -DCOMPILER_SUPPORT_Wshadow -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wshadow -o CMakeFiles/cmTC_13bce.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_13bce
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13bce.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -DCOMPILER_SUPPORT_Wshadow -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_13bce.dir/src.cxx.o  -o cmTC_13bce 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wnovariadicmacros succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_72d93/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_72d93.dir/build.make CMakeFiles/cmTC_72d93.dir/build
+Building CXX object CMakeFiles/cmTC_72d93.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -DCOMPILER_SUPPORT_Wnovariadicmacros -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wno-variadic-macros -o CMakeFiles/cmTC_72d93.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_72d93
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72d93.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -DCOMPILER_SUPPORT_Wnovariadicmacros -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_72d93.dir/src.cxx.o  -o cmTC_72d93 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wnolonglong succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bb94b/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bb94b.dir/build.make CMakeFiles/cmTC_bb94b.dir/build
+Building CXX object CMakeFiles/cmTC_bb94b.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -DCOMPILER_SUPPORT_Wnolonglong -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Wno-long-long -o CMakeFiles/cmTC_bb94b.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_bb94b
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb94b.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -DCOMPILER_SUPPORT_Wnolonglong -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_bb94b.dir/src.cxx.o  -o cmTC_bb94b 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_fnochecknew succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_36d75/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_36d75.dir/build.make CMakeFiles/cmTC_36d75.dir/build
+Building CXX object CMakeFiles/cmTC_36d75.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -DCOMPILER_SUPPORT_fnochecknew -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -fno-check-new -o CMakeFiles/cmTC_36d75.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_36d75
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36d75.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -DCOMPILER_SUPPORT_fnochecknew -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_36d75.dir/src.cxx.o  -o cmTC_36d75 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_fnocommon succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6667a/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_6667a.dir/build.make CMakeFiles/cmTC_6667a.dir/build
+Building CXX object CMakeFiles/cmTC_6667a.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -DCOMPILER_SUPPORT_fnocommon -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -fno-common -o CMakeFiles/cmTC_6667a.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_6667a
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6667a.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -DCOMPILER_SUPPORT_fnocommon -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_6667a.dir/src.cxx.o  -o cmTC_6667a 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_fstrictaliasing succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7692a/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_7692a.dir/build.make CMakeFiles/cmTC_7692a.dir/build
+Building CXX object CMakeFiles/cmTC_7692a.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -DCOMPILER_SUPPORT_fstrictaliasing -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -fstrict-aliasing -o CMakeFiles/cmTC_7692a.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_7692a
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7692a.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -DCOMPILER_SUPPORT_fstrictaliasing -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_7692a.dir/src.cxx.o  -o cmTC_7692a 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Qunusedarguments succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9a59c/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9a59c.dir/build.make CMakeFiles/cmTC_9a59c.dir/build
+Building CXX object CMakeFiles/cmTC_9a59c.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_Qunusedarguments -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -Qunused-arguments -o CMakeFiles/cmTC_9a59c.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_9a59c
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a59c.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -DCOMPILER_SUPPORT_Qunusedarguments -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_9a59c.dir/src.cxx.o  -o cmTC_9a59c 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_ansi succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3d37c/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3d37c.dir/build.make CMakeFiles/cmTC_3d37c.dir/build
+Building CXX object CMakeFiles/cmTC_3d37c.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Qunused-arguments -DCOMPILER_SUPPORT_ansi -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -ansi -o CMakeFiles/cmTC_3d37c.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_3d37c
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d37c.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Qunused-arguments -DCOMPILER_SUPPORT_ansi -Werror -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_3d37c.dir/src.cxx.o  -o cmTC_3d37c 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_13373/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_13373.dir/build.make CMakeFiles/cmTC_13373.dir/build
+Building C object CMakeFiles/cmTC_13373.dir/CheckIncludeFile.c.o
+/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_13373.dir/CheckIncludeFile.c.o   -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_13373
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13373.dir/link.txt --verbose=1
+/usr/bin/gcc   -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_13373.dir/CheckIncludeFile.c.o  -o cmTC_13373 
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_269b0/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_269b0.dir/build.make CMakeFiles/cmTC_269b0.dir/build
+Building C object CMakeFiles/cmTC_269b0.dir/src.c.o
+/usr/bin/gcc   -DCMAKE_HAVE_LIBC_PTHREAD -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_269b0.dir/src.c.o   -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_269b0
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_269b0.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCMAKE_HAVE_LIBC_PTHREAD -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_269b0.dir/src.c.o  -o cmTC_269b0 
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_FASTMATH succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bf51e/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bf51e.dir/build.make CMakeFiles/cmTC_bf51e.dir/build
+Building CXX object CMakeFiles/cmTC_bf51e.dir/src.cxx.o
+/usr/bin/g++    -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Qunused-arguments -ansi -DCOMPILER_SUPPORT_FASTMATH -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -ffast-math -o CMakeFiles/cmTC_bf51e.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_bf51e
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf51e.dir/link.txt --verbose=1
+/usr/bin/g++   -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Qunused-arguments -ansi -DCOMPILER_SUPPORT_FASTMATH -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_bf51e.dir/src.cxx.o  -o cmTC_bf51e 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_cc1b0/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_cc1b0.dir/build.make CMakeFiles/cmTC_cc1b0.dir/build
+Building CXX object CMakeFiles/cmTC_cc1b0.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_cc1b0.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_cc1b0
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc1b0.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_cc1b0.dir/src.cxx.o  -o cmTC_cc1b0 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_995a8/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_995a8.dir/build.make CMakeFiles/cmTC_995a8.dir/build
+Building CXX object CMakeFiles/cmTC_995a8.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_995a8.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_995a8
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_995a8.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_995a8.dir/src.cxx.o  -o cmTC_995a8 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3250d/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3250d.dir/build.make CMakeFiles/cmTC_3250d.dir/build
+Building CXX object CMakeFiles/cmTC_3250d.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_3250d.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_3250d
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3250d.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_3250d.dir/src.cxx.o  -o cmTC_3250d 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_37d8a/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_37d8a.dir/build.make CMakeFiles/cmTC_37d8a.dir/build
+Building CXX object CMakeFiles/cmTC_37d8a.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_37d8a.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_37d8a
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37d8a.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_37d8a.dir/src.cxx.o  -o cmTC_37d8a 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ac33e/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_ac33e.dir/build.make CMakeFiles/cmTC_ac33e.dir/build
+Building CXX object CMakeFiles/cmTC_ac33e.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_ac33e.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_ac33e
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac33e.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_ac33e.dir/src.cxx.o  -o cmTC_ac33e 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_18900/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_18900.dir/build.make CMakeFiles/cmTC_18900.dir/build
+Building CXX object CMakeFiles/cmTC_18900.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_18900.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_18900
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18900.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_18900.dir/src.cxx.o  -o cmTC_18900 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_28c58/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_28c58.dir/build.make CMakeFiles/cmTC_28c58.dir/build
+Building CXX object CMakeFiles/cmTC_28c58.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_28c58.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_28c58
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28c58.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_28c58.dir/src.cxx.o  -o cmTC_28c58 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_19323/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_19323.dir/build.make CMakeFiles/cmTC_19323.dir/build
+Building CXX object CMakeFiles/cmTC_19323.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_19323.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_19323
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19323.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_19323.dir/src.cxx.o  -o cmTC_19323 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d0a2e/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d0a2e.dir/build.make CMakeFiles/cmTC_d0a2e.dir/build
+Building CXX object CMakeFiles/cmTC_d0a2e.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_d0a2e.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_d0a2e
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0a2e.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_d0a2e.dir/src.cxx.o  -o cmTC_d0a2e 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e21a2/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_e21a2.dir/build.make CMakeFiles/cmTC_e21a2.dir/build
+Building CXX object CMakeFiles/cmTC_e21a2.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_e21a2.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_e21a2
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e21a2.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_e21a2.dir/src.cxx.o  -o cmTC_e21a2 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e1850/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_e1850.dir/build.make CMakeFiles/cmTC_e1850.dir/build
+Building CXX object CMakeFiles/cmTC_e1850.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_e1850.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_e1850
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1850.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_e1850.dir/src.cxx.o  -o cmTC_e1850 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_771b8/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_771b8.dir/build.make CMakeFiles/cmTC_771b8.dir/build
+Building CXX object CMakeFiles/cmTC_771b8.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_771b8.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_771b8
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_771b8.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_771b8.dir/src.cxx.o  -o cmTC_771b8 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e3288/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_e3288.dir/build.make CMakeFiles/cmTC_e3288.dir/build
+Building CXX object CMakeFiles/cmTC_e3288.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_e3288.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_e3288
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3288.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_e3288.dir/src.cxx.o  -o cmTC_e3288 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e0d61/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_e0d61.dir/build.make CMakeFiles/cmTC_e0d61.dir/build
+Building CXX object CMakeFiles/cmTC_e0d61.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_e0d61.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_e0d61
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0d61.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_e0d61.dir/src.cxx.o  -o cmTC_e0d61 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9e9e1/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9e9e1.dir/build.make CMakeFiles/cmTC_9e9e1.dir/build
+Building CXX object CMakeFiles/cmTC_9e9e1.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_9e9e1.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_9e9e1
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e9e1.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_9e9e1.dir/src.cxx.o  -o cmTC_9e9e1 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0beba/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_0beba.dir/build.make CMakeFiles/cmTC_0beba.dir/build
+Building C object CMakeFiles/cmTC_0beba.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_0beba.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0beba
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0beba.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_0beba.dir/CheckFunctionExists.c.o  -o cmTC_0beba  /usr/lib/libblas.dylib 
+
+
+
+Determining if the function cheev_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6ce64/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_6ce64.dir/build.make CMakeFiles/cmTC_6ce64.dir/build
+Building C object CMakeFiles/cmTC_6ce64.dir/CheckFunctionExists.c.o
+/usr/bin/gcc -DLAPACK_USE_F2C  -DCHECK_FUNCTION_EXISTS=cheev_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_6ce64.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6ce64
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ce64.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=cheev_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_6ce64.dir/CheckFunctionExists.c.o  -o cmTC_6ce64  -framework Accelerate /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3558c/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3558c.dir/build.make CMakeFiles/cmTC_3558c.dir/build
+Building CXX object CMakeFiles/cmTC_3558c.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_3558c.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_3558c
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3558c.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_3558c.dir/src.cxx.o  -o cmTC_3558c 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_03fcf/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_03fcf.dir/build.make CMakeFiles/cmTC_03fcf.dir/build
+Building C object CMakeFiles/cmTC_03fcf.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_03fcf.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_03fcf
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03fcf.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_03fcf.dir/CheckFunctionExists.c.o  -o cmTC_03fcf  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a34ad/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_a34ad.dir/build.make CMakeFiles/cmTC_a34ad.dir/build
+Building CXX object CMakeFiles/cmTC_a34ad.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_a34ad.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_a34ad
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a34ad.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_a34ad.dir/src.cxx.o  -o cmTC_a34ad 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_cfaf3/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_cfaf3.dir/build.make CMakeFiles/cmTC_cfaf3.dir/build
+Building C object CMakeFiles/cmTC_cfaf3.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_cfaf3.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cfaf3
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfaf3.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_cfaf3.dir/CheckFunctionExists.c.o  -o cmTC_cfaf3  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bb689/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bb689.dir/build.make CMakeFiles/cmTC_bb689.dir/build
+Building CXX object CMakeFiles/cmTC_bb689.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_bb689.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_bb689
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb689.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_bb689.dir/src.cxx.o  -o cmTC_bb689 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_46173/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_46173.dir/build.make CMakeFiles/cmTC_46173.dir/build
+Building C object CMakeFiles/cmTC_46173.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_46173.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_46173
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46173.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_46173.dir/CheckFunctionExists.c.o  -o cmTC_46173  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1b9ef/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_1b9ef.dir/build.make CMakeFiles/cmTC_1b9ef.dir/build
+Building CXX object CMakeFiles/cmTC_1b9ef.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_1b9ef.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_1b9ef
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b9ef.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_1b9ef.dir/src.cxx.o  -o cmTC_1b9ef 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d3faf/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d3faf.dir/build.make CMakeFiles/cmTC_d3faf.dir/build
+Building C object CMakeFiles/cmTC_d3faf.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_d3faf.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d3faf
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3faf.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_d3faf.dir/CheckFunctionExists.c.o  -o cmTC_d3faf  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_de7c9/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_de7c9.dir/build.make CMakeFiles/cmTC_de7c9.dir/build
+Building CXX object CMakeFiles/cmTC_de7c9.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_de7c9.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_de7c9
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_de7c9.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_de7c9.dir/src.cxx.o  -o cmTC_de7c9 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d13e4/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d13e4.dir/build.make CMakeFiles/cmTC_d13e4.dir/build
+Building C object CMakeFiles/cmTC_d13e4.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_d13e4.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d13e4
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d13e4.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_d13e4.dir/CheckFunctionExists.c.o  -o cmTC_d13e4  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_73597/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_73597.dir/build.make CMakeFiles/cmTC_73597.dir/build
+Building CXX object CMakeFiles/cmTC_73597.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_73597.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_73597
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73597.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_73597.dir/src.cxx.o  -o cmTC_73597 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1fd72/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_1fd72.dir/build.make CMakeFiles/cmTC_1fd72.dir/build
+Building C object CMakeFiles/cmTC_1fd72.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_1fd72.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1fd72
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fd72.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_1fd72.dir/CheckFunctionExists.c.o  -o cmTC_1fd72  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4341c/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_4341c.dir/build.make CMakeFiles/cmTC_4341c.dir/build
+Building CXX object CMakeFiles/cmTC_4341c.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_4341c.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_4341c
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4341c.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_4341c.dir/src.cxx.o  -o cmTC_4341c 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9bd44/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9bd44.dir/build.make CMakeFiles/cmTC_9bd44.dir/build
+Building C object CMakeFiles/cmTC_9bd44.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_9bd44.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9bd44
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9bd44.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_9bd44.dir/CheckFunctionExists.c.o  -o cmTC_9bd44  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7c482/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_7c482.dir/build.make CMakeFiles/cmTC_7c482.dir/build
+Building CXX object CMakeFiles/cmTC_7c482.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_7c482.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_7c482
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c482.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_7c482.dir/src.cxx.o  -o cmTC_7c482 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3c529/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3c529.dir/build.make CMakeFiles/cmTC_3c529.dir/build
+Building C object CMakeFiles/cmTC_3c529.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_3c529.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_3c529
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c529.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_3c529.dir/CheckFunctionExists.c.o  -o cmTC_3c529  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4eca5/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_4eca5.dir/build.make CMakeFiles/cmTC_4eca5.dir/build
+Building CXX object CMakeFiles/cmTC_4eca5.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_4eca5.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_4eca5
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4eca5.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_4eca5.dir/src.cxx.o  -o cmTC_4eca5 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_17dc7/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_17dc7.dir/build.make CMakeFiles/cmTC_17dc7.dir/build
+Building C object CMakeFiles/cmTC_17dc7.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_17dc7.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_17dc7
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17dc7.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_17dc7.dir/CheckFunctionExists.c.o  -o cmTC_17dc7  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3c712/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3c712.dir/build.make CMakeFiles/cmTC_3c712.dir/build
+Building CXX object CMakeFiles/cmTC_3c712.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_3c712.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_3c712
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c712.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_3c712.dir/src.cxx.o  -o cmTC_3c712 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6f370/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_6f370.dir/build.make CMakeFiles/cmTC_6f370.dir/build
+Building C object CMakeFiles/cmTC_6f370.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_6f370.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6f370
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f370.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_6f370.dir/CheckFunctionExists.c.o  -o cmTC_6f370  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b7c66/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_b7c66.dir/build.make CMakeFiles/cmTC_b7c66.dir/build
+Building CXX object CMakeFiles/cmTC_b7c66.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_b7c66.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_b7c66
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7c66.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_b7c66.dir/src.cxx.o  -o cmTC_b7c66 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_01063/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_01063.dir/build.make CMakeFiles/cmTC_01063.dir/build
+Building C object CMakeFiles/cmTC_01063.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_01063.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_01063
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01063.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_01063.dir/CheckFunctionExists.c.o  -o cmTC_01063  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d6232/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d6232.dir/build.make CMakeFiles/cmTC_d6232.dir/build
+Building CXX object CMakeFiles/cmTC_d6232.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_d6232.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_d6232
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6232.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_d6232.dir/src.cxx.o  -o cmTC_d6232 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_f2db8/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_f2db8.dir/build.make CMakeFiles/cmTC_f2db8.dir/build
+Building C object CMakeFiles/cmTC_f2db8.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_f2db8.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f2db8
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2db8.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_f2db8.dir/CheckFunctionExists.c.o  -o cmTC_f2db8  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c3f83/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c3f83.dir/build.make CMakeFiles/cmTC_c3f83.dir/build
+Building CXX object CMakeFiles/cmTC_c3f83.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_c3f83.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_c3f83
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3f83.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_c3f83.dir/src.cxx.o  -o cmTC_c3f83 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_944c9/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_944c9.dir/build.make CMakeFiles/cmTC_944c9.dir/build
+Building C object CMakeFiles/cmTC_944c9.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_944c9.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_944c9
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_944c9.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_944c9.dir/CheckFunctionExists.c.o  -o cmTC_944c9  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_87560/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_87560.dir/build.make CMakeFiles/cmTC_87560.dir/build
+Building CXX object CMakeFiles/cmTC_87560.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_87560.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_87560
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_87560.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_87560.dir/src.cxx.o  -o cmTC_87560 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bdae8/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bdae8.dir/build.make CMakeFiles/cmTC_bdae8.dir/build
+Building C object CMakeFiles/cmTC_bdae8.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_bdae8.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bdae8
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdae8.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_bdae8.dir/CheckFunctionExists.c.o  -o cmTC_bdae8  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_731db/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_731db.dir/build.make CMakeFiles/cmTC_731db.dir/build
+Building CXX object CMakeFiles/cmTC_731db.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_731db.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_731db
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_731db.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_731db.dir/src.cxx.o  -o cmTC_731db 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_777fa/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_777fa.dir/build.make CMakeFiles/cmTC_777fa.dir/build
+Building C object CMakeFiles/cmTC_777fa.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_777fa.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_777fa
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_777fa.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_777fa.dir/CheckFunctionExists.c.o  -o cmTC_777fa  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1acee/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_1acee.dir/build.make CMakeFiles/cmTC_1acee.dir/build
+Building CXX object CMakeFiles/cmTC_1acee.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_1acee.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_1acee
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1acee.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_1acee.dir/src.cxx.o  -o cmTC_1acee 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_94aa0/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_94aa0.dir/build.make CMakeFiles/cmTC_94aa0.dir/build
+Building C object CMakeFiles/cmTC_94aa0.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_94aa0.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_94aa0
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94aa0.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_94aa0.dir/CheckFunctionExists.c.o  -o cmTC_94aa0  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bde71/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_bde71.dir/build.make CMakeFiles/cmTC_bde71.dir/build
+Building CXX object CMakeFiles/cmTC_bde71.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_bde71.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_bde71
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bde71.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_bde71.dir/src.cxx.o  -o cmTC_bde71 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d28cd/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d28cd.dir/build.make CMakeFiles/cmTC_d28cd.dir/build
+Building C object CMakeFiles/cmTC_d28cd.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_d28cd.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d28cd
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d28cd.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_d28cd.dir/CheckFunctionExists.c.o  -o cmTC_d28cd  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3af16/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3af16.dir/build.make CMakeFiles/cmTC_3af16.dir/build
+Building CXX object CMakeFiles/cmTC_3af16.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_3af16.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_3af16
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3af16.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_3af16.dir/src.cxx.o  -o cmTC_3af16 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7d289/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_7d289.dir/build.make CMakeFiles/cmTC_7d289.dir/build
+Building C object CMakeFiles/cmTC_7d289.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_7d289.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7d289
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7d289.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_7d289.dir/CheckFunctionExists.c.o  -o cmTC_7d289  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_2d168/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_2d168.dir/build.make CMakeFiles/cmTC_2d168.dir/build
+Building CXX object CMakeFiles/cmTC_2d168.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_2d168.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_2d168
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d168.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_2d168.dir/src.cxx.o  -o cmTC_2d168 
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4f5c8/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_4f5c8.dir/build.make CMakeFiles/cmTC_4f5c8.dir/build
+Building CXX object CMakeFiles/cmTC_4f5c8.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_4f5c8.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_4f5c8
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f5c8.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_4f5c8.dir/src.cxx.o  -o cmTC_4f5c8 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a8555/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_a8555.dir/build.make CMakeFiles/cmTC_a8555.dir/build
+Building C object CMakeFiles/cmTC_a8555.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_a8555.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a8555
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8555.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_a8555.dir/CheckFunctionExists.c.o  -o cmTC_a8555  /usr/lib/libblas.dylib 
+
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_std=cpp03 succeeded with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_26fb6/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_26fb6.dir/build.make CMakeFiles/cmTC_26fb6.dir/build
+Building CXX object CMakeFiles/cmTC_26fb6.dir/src.cxx.o
+/usr/bin/g++    -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=c++03 -o CMakeFiles/cmTC_26fb6.dir/src.cxx.o -c /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_26fb6
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26fb6.dir/link.txt --verbose=1
+/usr/bin/g++   -DCOMPILER_SUPPORT_std=cpp03 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_26fb6.dir/src.cxx.o  -o cmTC_26fb6 
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function sgemm_ exists passed with the following output:
+Change Dir: /Users/vikramansathiyanarayanan/Desktop/qp_wrappers/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_6d4d4/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_6d4d4.dir/build.make CMakeFiles/cmTC_6d4d4.dir/build
+Building C object CMakeFiles/cmTC_6d4d4.dir/CheckFunctionExists.c.o
+/usr/bin/gcc   -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -o CMakeFiles/cmTC_6d4d4.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.16.4/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_6d4d4
+/usr/local/Cellar/cmake/3.16.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d4d4.dir/link.txt --verbose=1
+/usr/bin/gcc  -DCHECK_FUNCTION_EXISTS=sgemm_ -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/usr/local/opt/libffi/lib  CMakeFiles/cmTC_6d4d4.dir/CheckFunctionExists.c.o  -o cmTC_6d4d4  /usr/lib/libblas.dylib 
+
+
+
