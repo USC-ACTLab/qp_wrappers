@@ -14,6 +14,8 @@ add_subdirectory(third_party/osqp)
 # SET(CGAL_QP_NO_ASSERTIONS ON CACHE BOOL "cgal qp solver perf on")
 find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
 
+include(cmake/FindCPLEX.cmake)
+
 add_library(qp_wrappers INTERFACE)
 target_include_directories(
   qp_wrappers
@@ -30,6 +32,10 @@ target_link_libraries(
   qpOASES 
   osqp 
   CGAL::CGAL
+  # cplex-library
+  # cplex-concert
+  ilocplex
+  # cplex-cp
   ${CMAKE_DL_LIBS}
 )
 target_compile_definitions(
@@ -37,6 +43,7 @@ target_compile_definitions(
   INTERFACE 
   CGAL_QP_NO_ASSERTIONS
 )
+
 
 if (GUROBI_INCLUDE_DIR)
   # in cache already
@@ -94,7 +101,6 @@ endif(GUROBI_INCLUDE_DIR)
 
 include_directories( ${GUROBI_INCLUDE_DIRS} ) 
 target_link_libraries(qp_wrappers INTERFACE "-I /Library/gurobi901/mac64/include -L /Library/gurobi901/mac64/lib -lgurobi_c++ -lgurobi90 -lm") 
-
 
 add_executable(
   linear_regression 
