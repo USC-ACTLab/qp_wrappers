@@ -65,10 +65,6 @@ int main() {
     auto gurobi_end = std::chrono::system_clock::now();
 
 
-    std::cout << "cgal: " <<  std::chrono::duration<double>(cgal_end - cgal_start).count() << std::endl << 
-                 "osqp: " <<  std::chrono::duration<double>(osqp_end - osqp_start).count() << std::endl << 
-                 "qpoases: " <<  std::chrono::duration<double>(qpoases_end - qpoases_start).count() << std::endl <<
-                 "gurobi: " <<  std::chrono::duration<double>(gurobi_end - gurobi_start).count() << std::endl;
     auto cplex_start = std::chrono::system_clock::now();
     qp_wrappers::qp<double>::Vector cplex_soln;
     qp_wrappers::cplex::solver cplex;
@@ -76,9 +72,10 @@ int main() {
     auto cplex_end = std::chrono::system_clock::now();
 
 
-    std::cout << "osqp: " <<  std::chrono::duration<double>(osqp_end - osqp_start).count() << std::endl << 
+    std::cout << "cgal: " <<  std::chrono::duration<double>(cgal_end - cgal_start).count() << std::endl << 
+                 "osqp: " <<  std::chrono::duration<double>(osqp_end - osqp_start).count() << std::endl << 
                  "qpoases: " <<  std::chrono::duration<double>(qpoases_end - qpoases_start).count() << std::endl <<
-                 "cgal: " <<  std::chrono::duration<double>(cgal_end - cgal_start).count() << std::endl <<
+                 "gurobi: " <<  std::chrono::duration<double>(gurobi_end - gurobi_start).count() << 
                  "cplex: " <<  std::chrono::duration<double>(cplex_end - cplex_start).count() << std::endl;
 
 
