@@ -95,10 +95,18 @@ namespace qp_wrappers{
 							primal_solution(i) = x[i].get(GRB_DoubleAttr_X);
 						
 						delete[] x;
+						delete[] a;
+						delete[] q;
+						delete[] lB;
+						delete[] uB;
 						return success;
 					}
 
 					delete[] x;
+					delete[] a;
+					delete[] q;
+					delete[] lB;
+					delete[] uB;
 
 					return infeasible;
 
