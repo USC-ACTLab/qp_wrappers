@@ -61,7 +61,7 @@ int main() {
     auto gurobi_start = std::chrono::system_clock::now();
     qp_wrappers::qp<double>::Vector gurobi_soln;
     qp_wrappers::gurobi::solver gurobi;
-    std::cout << "gurobi: " << gurobi.solve(problem, gurobi_soln) << std::endl << gurobi_soln << std::endl<< std::endl<< std::endl<< std::endl;
+    std::cout << "gurobi: " << gurobi.solve(problem, gurobi_soln) << std::endl << gurobi_soln << std::endl;
     auto gurobi_end = std::chrono::system_clock::now();
 
 
