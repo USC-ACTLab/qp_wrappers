@@ -1,3 +1,6 @@
+#ifndef QPWRAPPERS_GUROBI_HPP
+#define QPWRAPPERS_GUROBI_HPP
+
 #include "problem.hpp"
 #include "types.hpp"
 #include <gurobi_c++.h>
@@ -114,3 +117,5 @@ namespace qp_wrappers{
 		};
 	}
 }
+
+#endif
