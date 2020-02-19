@@ -15,6 +15,7 @@ add_subdirectory(third_party/osqp)
 find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
 
 include(cmake/FindCPLEX.cmake)
+include(cmake/FindGUROBI.cmake)
 
 add_library(qp_wrappers INTERFACE)
 target_include_directories(
@@ -24,6 +25,7 @@ target_include_directories(
   third_party/qpoases-mirror/include
   third_party/osqp/include
   ${CGAL_INCLUDE_DIRECTORIES}
+  ${GUROBI_INCLUDE_DIRS}
 )
 target_link_libraries(
   qp_wrappers 
@@ -37,6 +39,8 @@ target_link_libraries(
   ilocplex
   # cplex-cp
   ${CMAKE_DL_LIBS}
+  ${GUROBI_CXX_LIBRARY}
+  ${GUROBI_LIBRARY}
 )
 target_compile_definitions(
   qp_wrappers 
