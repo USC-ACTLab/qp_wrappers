@@ -36,7 +36,7 @@ namespace qp_wrappers{
 
 					double * lB = new double[n];
 					for(int i=0;i<n;i++)	lB[i] = lbx(i);
-					double * uB = new double[m];
+					double * uB = new double[n];
 					for(int i=0;i<n;i++)	uB[i] = ubx(i);
 
 					double * q = new double[n*n];
