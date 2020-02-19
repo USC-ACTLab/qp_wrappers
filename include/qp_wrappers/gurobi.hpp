@@ -12,20 +12,19 @@ namespace qp_wrappers{
 		class solver{
 			public:
 
-				GRBEnv* env = 0;
+				GRBEnv env;
 				
 				solver(){
-					env = new GRBEnv();
-					env->set("OutputFlag", "0");
+					env.set("OutputFlag", "0");
 				}
 
 
 				template<typename T>
 				return_type solve(const qp<T>& problem, typename qp<T>::Vector& primal_solution) {
 					
-					env->start();
+					env.start();
 					// Create an empty model
-					GRBModel model = GRBModel(*env);
+					GRBModel model = GRBModel(env);
 
 					int n = problem.variable_count, m = problem.A.rows();
 					
