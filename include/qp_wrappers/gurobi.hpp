@@ -16,8 +16,8 @@ namespace qp_wrappers{
 				template<typename T>
 				return_type solve(const qp<T>& problem, typename qp<T>::Vector& primal_solution) {
 
-					GRBEnv env = GRBEnv(true);
-					//env.set("LogFile", "mip1.log");
+					GRBEnv env = GRBEnv();
+					env.set("OutputFlag", "0");
 					env.start();
 
 					// Create an empty model
