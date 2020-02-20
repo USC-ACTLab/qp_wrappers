@@ -17,6 +17,9 @@ find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
 include(cmake/FindCPLEX.cmake)
 include(cmake/FindGUROBI.cmake)
 
+
+add_subdirectory(third_party/yaml-cpp)
+
 add_library(qp_wrappers INTERFACE)
 target_include_directories(
   qp_wrappers
@@ -41,6 +44,7 @@ target_link_libraries(
   ${CMAKE_DL_LIBS}
   ${GUROBI_CXX_LIBRARY}
   ${GUROBI_LIBRARY}
+  yaml-cpp
 )
 target_compile_definitions(
   qp_wrappers 
