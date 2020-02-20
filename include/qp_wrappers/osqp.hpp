@@ -11,7 +11,7 @@
 namespace qp_wrappers {
     namespace osqp {
 
-        class solver{
+        class solver {
             public:
                 solver() {
                     settings = (OSQPSettings *)c_malloc(sizeof(OSQPSettings));
@@ -35,46 +35,30 @@ namespace qp_wrappers {
                 }
 
                 return_type solve(const qp<c_float>& problem, qp<c_float>::Vector& primal_solution) {
-                    qp<c_float>::Matrix q_upper_tri = problem.Q.triangularView<Eigen::Upper>();
+                    qp<c_float>::Matrix q_upper_tri = problem.Q().triangularView<Eigen::Upper>();
                     Eigen::SparseMatrix<c_float> sparse_q = q_upper_tri.sparseView();
                     sparse_q.makeCompressed();
 
 
-                    qp<c_float>::Matrix A = problem.A;
-                    int m = A.rows();
-                    qp<c_float>::Vector lb = problem.lb;
-                    qp<c_float>::Vector ub = problem.ub;
-                    A.conservativeResize(A.rows() + problem.variable_count, A.cols());
-                    lb.conservativeResize(lb.rows() + problem.variable_count);
-                    ub.conservativeResize(ub.rows() + problem.variable_count);
-                    A.block(m, 0, problem.variable_count, problem.variable_count).setIdentity();
-                    lb.block(m, 0, problem.variable_count, 1) = problem.lbx;
-                    ub.block(m, 0, problem.variable_count, 1) = problem.ubx;
+                    qp<c_float>::Matrix A = problem.A();
+                    // int m = A.rows();
+                    qp<c_float>::Vector lb = problem.lb();
+                    qp<c_float>::Vector ub = problem.ub();
+                    A.conservativeResize(problem.num_constraints() + problem.num_vars(), Eigen::NoChange_t());
+                    lb.conservativeResize(problem.num_constraints() + problem.num_vars());
+                    ub.conservativeResize(problem.num_constraints() + problem.num_vars());
+                    A.block(problem.num_constraints(), 0, problem.num_vars(), problem.num_vars()).setIdentity();
+                    lb.block(problem.num_constraints(), 0, problem.num_vars(), 1) = problem.lbx();
+                    ub.block(problem.num_constraints(), 0, problem.num_vars(), 1) = problem.ubx();
                     Eigen::SparseMatrix<c_float> sparse_a = A.sparseView();
                     sparse_a.makeCompressed();
 
-
-
-                    // std::cout << "non zeros: " << std::endl;
-                    // for(int i = 0; i < sparse_q.nonZeros(); i++) {
-                    //     std::cout << sparse_q.valuePtr()[i] << " ";
-                    // }
-                    // std::cout << std::endl <<  "outerIndex: " ;
-
-                    // for(int i = 0; i < problem.variable_count+1; i++) {
-                    //     std::cout << sparse_q.outerIndexPtr()[i] << " ";
-                    // }
-                    // std::cout << std::endl << "innerIndex: ";
-                    // for(int i = 0; i < sparse_q.nonZeros(); i++) {
-                    //     std::cout << sparse_q.innerIndexPtr()[i] << " ";
-                    // }
-                    // std::cout << std::endl;
 
                     // Workspace structures
                     OSQPWorkspace *work;
                     OSQPData      *data     = (OSQPData *)c_malloc(sizeof(OSQPData));
 
-                    data->n = problem.variable_count;
+                    data->n = problem.num_vars();
                     data->m = A.rows();
                     data->P = csc_matrix(
                                     data->n, 
@@ -83,7 +67,7 @@ namespace qp_wrappers {
                                     sparse_q.valuePtr(), 
                                     sparse_q.innerIndexPtr(), 
                                     sparse_q.outerIndexPtr());
-                    data->q = const_cast<c_float*>(problem.c.data());
+                    data->q = const_cast<c_float*>(problem.c().data());
                     data->A = csc_matrix(data->m, 
                                         data->n, 
                                         sparse_a.nonZeros(),
@@ -102,7 +86,7 @@ namespace qp_wrappers {
 
                     // std::cout << "osqp status_val: " << work->info->status_val << std::endl;
                     if(work->info->status_val == OSQP_SOLVED) {
-                        primal_solution.resize(problem.variable_count);
+                        primal_solution.resize(problem.num_vars());
                         for(int i = 0; i < data->n; i++)
                             primal_solution(i) = work->solution->x[i];
 

@@ -6,6 +6,7 @@
 #include <qpOASES.hpp>
 #include <iostream>
 #include "types.hpp"
+#include <yaml-cpp/yaml.h>
 
 namespace qp_wrappers {
     namespace qpoases {
@@ -18,6 +19,17 @@ namespace qp_wrappers {
                     nWSR = 10000;
                 }
 
+                solver(const std::string& path) {
+                    YAML::Node settings = YAML::LoadFile(path);
+                }
+
+                /**
+                    Save the settings to the file at the given path.
+                */
+                void save(const std::string& path) {
+                    
+                }
+
                 void set_options(const qpOASES::Options& options) {
                     this->options = options;
                 }
@@ -27,23 +39,23 @@ namespace qp_wrappers {
                 }
 
                 return_type solve(const qp<qpOASES::real_t>& problem, qp<qpOASES::real_t>::Vector& primal_soln) {
-                    qpOASES::QProblem qpoases_problem(problem.variable_count, problem.A.rows());
+                    qpOASES::QProblem qpoases_problem(problem.num_vars(), problem.num_constraints());
                     qpoases_problem.setOptions(options);
 
                     auto return_value = 
-                    qpoases_problem.init(problem.Q.data(),
-                                        problem.c.data(),
-                                        problem.A.data(),
-                                        problem.lbx.data(),
-                                        problem.ubx.data(),
-                                        problem.lb.data(),
-                                        problem.ub.data(),
+                    qpoases_problem.init(problem.Q().data(),
+                                        problem.c().data(),
+                                        problem.A().data(),
+                                        problem.lbx().data(),
+                                        problem.ubx().data(),
+                                        problem.lb().data(),
+                                        problem.ub().data(),
                                         nWSR,
                                         NULL
                     );
 
                     if(return_value == qpOASES::SUCCESSFUL_RETURN) {
-                        primal_soln.resize(problem.variable_count);
+                        primal_soln.resize(problem.num_vars());
                         qpoases_problem.getPrimalSolution(primal_soln.data());
                         return success;
                     } else if (return_value == qpOASES::RET_MAX_NWSR_REACHED) {

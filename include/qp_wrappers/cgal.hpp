@@ -7,6 +7,7 @@
 #include <CGAL/QP_functions.h>
 #include <limits>
 #include <CGAL/MP_Float.h>
+#include <CGAL/Gmpz.h>
 
 namespace qp_wrappers{
 
@@ -21,32 +22,34 @@ namespace cgal {
 
             template<typename T>
             return_type solve(const qp<T>& problem, typename qp<T>::Vector& primal_solution) {
-                typedef CGAL::MP_Float ET;
+                // typedef CGAL::MP_Float ET;
+                typedef CGAL::Gmpzf ET;
                 typedef CGAL::Quadratic_program<T> Program;
                 typedef CGAL::Quadratic_program_solution<ET> Solution;
 
-                typename qp<T>::Matrix A(problem.A.rows() * 2, problem.variable_count);
-                typename qp<T>::Vector ub(problem.A.rows() * 2);
-                std::vector<CGAL::Comparison_result> comparisons(problem.A.rows() * 2);
+                typename qp<T>::Matrix A(problem.num_constraints() * 2, problem.num_vars());
+                typename qp<T>::Vector ub(problem.num_constraints() * 2);
+                std::vector<CGAL::Comparison_result> comparisons(problem.num_constraints() * 2);
                 int constraint_count = 0;
-                for(int i = 0; i < problem.A.rows(); i++) {
-                    if(problem.lb(i) == problem.ub(i)) {
+                for(int i = 0; i < problem.num_constraints(); i++) {
+                    if(problem.lb()(i) == problem.ub()(i)) {
                         comparisons[constraint_count] = CGAL::EQUAL;
-                        A.block(constraint_count, 0, 1, problem.variable_count) = problem.A.block(i, 0, 1, problem.variable_count);
-                        ub(constraint_count) = problem.ub(i);
+                        A.row(constraint_count) = problem.A().row(i);
+                        ub(constraint_count) = problem.ub()(i);
                         constraint_count++;
                     } else {
                         comparisons[constraint_count] = CGAL::SMALLER;
-                        A.block(constraint_count, 0, 1, problem.variable_count) = problem.A.block(i, 0, 1, problem.variable_count);
-                        ub(constraint_count) = problem.ub(i);
+                        A.row(constraint_count) = problem.A().row(i);
+                        ub(constraint_count) = problem.ub()(i);
                         constraint_count++;
 
                         comparisons[constraint_count] = CGAL::SMALLER;
-                        A.block(constraint_count, 0, 1, problem.variable_count) = -1 * problem.A.block(i, 0, 1, problem.variable_count);
-                        ub(constraint_count) = -1 * problem.lb(i);
+                        A.row(constraint_count) = -1 * problem.A().row(i);
+                        ub(constraint_count) = -1 * problem.lb()(i);
                         constraint_count++;
                     }
                 }
+
                 A.conservativeResize(constraint_count, A.cols());
                 ub.conservativeResize(constraint_count);
 
@@ -55,26 +58,26 @@ namespace cgal {
 
                 Program qpr(CGAL::SMALLER, false, std::numeric_limits<T>::lowest(), false, std::numeric_limits<T>::max());
                 
-                for(int i = 0; i < problem.variable_count; i++) {
+                for(int i = 0; i < problem.num_vars(); i++) {
                     for(int j = 0; j <= i; j++) {
-                        qpr.set_d(i, j, problem.Q(i, j));
+                        qpr.set_d(i, j, problem.Q()(i, j));
                     }
 
-                    qpr.set_c(i, problem.c(i));
-                    if(problem.lbx(i) <= std::numeric_limits<T>::lowest()) {
+                    qpr.set_c(i, problem.c()(i));
+                    if(problem.is_lbx_unbounded(i)) {
                         qpr.set_l(i, false);
                     } else
-                        qpr.set_l(i, true, problem.lbx(i));
+                        qpr.set_l(i, true, problem.lbx()(i));
 
-                    if(problem.ubx(i) >= std::numeric_limits<T>::max()) {
+                    if(problem.is_ubx_unbounded(i)) {
                         qpr.set_u(i, false);
                     } else
-                        qpr.set_u(i, true, problem.ubx(i));
+                        qpr.set_u(i, true, problem.ubx()(i));
                     
                 }
 
                 for(int i = 0; i < A.rows(); i++) {
-                    for(int j = 0; j < problem.variable_count; j++) {
+                    for(int j = 0; j < problem.num_vars(); j++) {
                         qpr.set_a(j, i, A(i, j));
                     }
                     qpr.set_b(i, ub(i));
@@ -132,8 +135,8 @@ namespace cgal {
                 if(s.is_infeasible())
                     return infeasible;
 
-                primal_solution.resize(problem.variable_count);
-                for(int i = 0; i < problem.variable_count; i++) {
+                primal_solution.resize(problem.num_vars());
+                for(int i = 0; i < problem.num_vars(); i++) {
                     /*
                     * hate to_double!
                     */

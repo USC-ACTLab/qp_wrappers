@@ -18,26 +18,26 @@ namespace qp_wrappers {
                 IloModel model(env);
 
                 IloNumVarArray variables(env);
-                for(int i = 0; i < problem.variable_count; i++) {
-                    IloNumVar var(env, problem.lbx(i), problem.ubx(i), ILOFLOAT);
+                for(int i = 0; i < problem.num_vars(); i++) {
+                    IloNumVar var(env, problem.lbx()(i), problem.ubx()(i), ILOFLOAT);
                     variables.add(var);
                 }
-                for(int i = 0; i < problem.A.rows(); i++) {
+                for(int i = 0; i < problem.num_constraints(); i++) {
                     IloExpr expr(env);
-                    for(int j = 0; j < problem.variable_count; j++) {
-                        expr += problem.A(i, j) * variables[j];
+                    for(int j = 0; j < problem.num_vars(); j++) {
+                        expr += problem.A()(i, j) * variables[j];
                     }
-                    IloRange range(env, problem.lb(i), expr, problem.ub(i));
+                    IloRange range(env, problem.lb()(i), expr, problem.ub()(i));
                     model.add(range);
                 }
 
                 IloExpr quadratic_cost(env);
                 IloExpr linear_cost(env);
-                for(int i = 0; i < problem.Q.rows(); i++) {
-                    for(int j = 0; j < problem.Q.cols(); j++) {
-                        quadratic_cost += variables[i] * variables[j] * problem.Q(i, j) * 0.5;
+                for(int i = 0; i < problem.num_vars(); i++) {
+                    for(int j = 0; j < problem.num_vars(); j++) {
+                        quadratic_cost += variables[i] * variables[j] * problem.Q()(i, j) * 0.5;
                     }
-                    linear_cost += variables[i] * problem.c(i);
+                    linear_cost += variables[i] * problem.c()(i);
                 }
 
 
@@ -51,8 +51,8 @@ namespace qp_wrappers {
                 if(solved) {
                     IloNumArray sol(env);
                     cplex.getValues(sol, variables);
-                    primal_solution.resize(problem.variable_count);
-                    for(int i = 0; i < problem.variable_count; i++) {
+                    primal_solution.resize(problem.num_vars());
+                    for(int i = 0; i < problem.num_vars(); i++) {
                         primal_solution(i) = sol[i];
                     }
                     env.end();
