@@ -4,6 +4,7 @@
 #include <qp_wrappers/cgal.hpp>
 #include <qp_wrappers/gurobi.hpp>
 #include <qp_wrappers/cplex.hpp>
+#include <qp_wrappers/alglib.hpp>
 #include <iostream>
 #include <chrono>
 
@@ -80,6 +81,15 @@ int main() {
     std::cout << "cplex verification: " << cplex_verif << std::endl;
 
 
+    auto alglib_start = std::chrono::system_clock::now();
+    qp_wrappers::qp<double>::Vector alglib_soln;
+    qp_wrappers::alglib::solver alglib;
+    std::cout << "alglib: " << alglib.solve(problem, alglib_soln) << std::endl << alglib_soln << std::endl;
+    auto alglib_end = std::chrono::system_clock::now();
+    bool alglib_verif = problem.verify(alglib_soln);
+    std::cout << "alglib verification: " << alglib_verif << std::endl;
+
+
 
 
     std::cout << std::endl << "Run durations:" << std::endl <<
@@ -87,7 +97,8 @@ int main() {
                  "\tqpoases: " <<  std::chrono::duration<double>(qpoases_end - qpoases_start).count() << std::endl <<
                  "\tcgal: " <<  std::chrono::duration<double>(cgal_end - cgal_start).count() << std::endl << 
                  "\tgurobi: "<< std::chrono::duration<double>(gurobi_end - gurobi_start).count() << std::endl <<
-                 "\tcplex: " <<  std::chrono::duration<double>(cplex_end - cplex_start).count() << std::endl;
+                 "\tcplex: " <<  std::chrono::duration<double>(cplex_end - cplex_start).count() << std::endl <<
+                 "\talglib: " <<  std::chrono::duration<double>(alglib_end - alglib_start).count() << std::endl;
 
 
 

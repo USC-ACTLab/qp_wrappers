@@ -7,6 +7,7 @@
 #include <osqp.h>
 #include <iostream>
 #include "types.hpp"
+#include <optional>
 
 namespace qp_wrappers {
     namespace osqp {
@@ -34,7 +35,11 @@ namespace qp_wrappers {
                     this->settings = settings;
                 }
 
-                return_type solve(const qp<c_float>& problem, qp<c_float>::Vector& primal_solution) {
+                return_type solve(
+                    const qp<c_float>& problem, 
+                    qp<c_float>::Vector& primal_solution,
+                    std::optional<qp<c_float>::Vector> initial_guess = std::nullopt) {
+                    
                     qp<c_float>::Matrix q_upper_tri = problem.Q().triangularView<Eigen::Upper>();
                     Eigen::SparseMatrix<c_float> sparse_q = q_upper_tri.sparseView();
                     sparse_q.makeCompressed();

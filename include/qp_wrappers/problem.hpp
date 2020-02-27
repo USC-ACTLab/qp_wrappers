@@ -155,6 +155,23 @@ class qp {
             return new_problem;
         }
 
+        bool is_consistent() const {
+            bool consistent = true;
+            for(int i = 0; i < num_vars(); i++) {
+                if(ubx_mtr(i) < lbx_mtr(i)) {
+                    consistent = false;
+                    std::cout << "bound on variable " << i << " is inconsistent. lbx " << lbx_mtr(i) << " ubx " << ubx_mtr(i) << std::endl;
+                }
+            }
+
+            for(int i = 0; i < num_constraints(); i++) {
+                if(ub_mtr(i) < lb_mtr(i)) {
+                    consistent = false;
+                    std::cout << "bound on constraint " << i << " is inconsistent. lb " << lb_mtr(i) << " ub " << ub_mtr(i) << std::endl; 
+                }
+            }
+            return consistent;
+        }
 
         bool verify(const Vector& solution) const {
             std::cout 

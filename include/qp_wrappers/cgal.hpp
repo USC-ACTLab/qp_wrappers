@@ -6,7 +6,6 @@
 #include <CGAL/QP_models.h>
 #include <CGAL/QP_functions.h>
 #include <limits>
-#include <CGAL/MP_Float.h>
 #include <CGAL/Gmpz.h>
 
 namespace qp_wrappers{

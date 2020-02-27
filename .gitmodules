@@ -16,3 +16,6 @@
 [submodule "third_party/yaml-cpp"]
 	path = third_party/yaml-cpp
 	url = https://github.com/jbeder/yaml-cpp
+[submodule "third_party/alglib-free"]
+	path = third_party/alglib-free
+	url = https://github.com/baskinburak/alglib-free

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(qp_wrappers)
-set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(third_party/eigen)
 add_subdirectory(third_party/qpoases-mirror)
@@ -17,6 +17,7 @@ find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
 include(cmake/FindCPLEX.cmake)
 include(cmake/FindGUROBI.cmake)
 
+add_subdirectory(third_party/alglib-free)
 
 add_subdirectory(third_party/yaml-cpp)
 
@@ -45,6 +46,7 @@ target_link_libraries(
   ${GUROBI_CXX_LIBRARY}
   ${GUROBI_LIBRARY}
   yaml-cpp
+  alglib-free
 )
 target_compile_definitions(
   qp_wrappers 

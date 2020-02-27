@@ -7,6 +7,7 @@
 #include <iostream>
 #include "types.hpp"
 #include <yaml-cpp/yaml.h>
+#include <optional>
 
 namespace qp_wrappers {
     namespace qpoases {
@@ -38,21 +39,42 @@ namespace qp_wrappers {
                     this->nWSR = nwsr;
                 }
 
-                return_type solve(const qp<qpOASES::real_t>& problem, qp<qpOASES::real_t>::Vector& primal_soln) {
+                return_type solve(
+                    const qp<qpOASES::real_t>& problem, 
+                    qp<qpOASES::real_t>::Vector& primal_soln, 
+                    std::optional<qp<qpOASES::real_t>::Vector> initial_guess = std::nullopt) {
+
                     qpOASES::QProblem qpoases_problem(problem.num_vars(), problem.num_constraints());
                     qpoases_problem.setOptions(options);
 
-                    auto return_value = 
-                    qpoases_problem.init(problem.Q().data(),
-                                        problem.c().data(),
-                                        problem.A().data(),
-                                        problem.lbx().data(),
-                                        problem.ubx().data(),
-                                        problem.lb().data(),
-                                        problem.ub().data(),
-                                        nWSR,
-                                        NULL
-                    );
+                    qpOASES::returnValue return_value;
+
+                    if(initial_guess) {
+                        return_value = 
+                        qpoases_problem.init(problem.Q().data(),
+                                            problem.c().data(),
+                                            problem.A().data(),
+                                            problem.lbx().data(),
+                                            problem.ubx().data(),
+                                            problem.lb().data(),
+                                            problem.ub().data(),
+                                            nWSR,
+                                            NULL,
+                                            initial_guess->data()
+                        );
+                    } else {
+                        return_value = 
+                        qpoases_problem.init(problem.Q().data(),
+                                            problem.c().data(),
+                                            problem.A().data(),
+                                            problem.lbx().data(),
+                                            problem.ubx().data(),
+                                            problem.lb().data(),
+                                            problem.ub().data(),
+                                            nWSR,
+                                            NULL
+                        );
+                    }
 
                     if(return_value == qpOASES::SUCCESSFUL_RETURN) {
                         primal_soln.resize(problem.num_vars());
