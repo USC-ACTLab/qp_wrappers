@@ -72,3 +72,12 @@ target_link_libraries(
   general_solver
   qp_wrappers
 )
+
+add_executable(
+  cplex_multiple_times
+  example/cplex/cplex_multiple_times.cpp
+)
+target_link_libraries (
+  cplex_multiple_times
+  qp_wrappers
+)

@@ -151,38 +151,36 @@ class Problem {
 
             Q_mtr += Q;
 
-            // Ensure it is symmetric
-            for(Index i = 0; i < Q_mtr.rows(); i++) {
-                for (Index j = i+1; j < Q_mtr.cols(); j++) {
-                    Q_mtr(i, j) = Q_mtr(j, i) = (Q_mtr(i, j) / 2) + (Q_mtr(j, i) / 2);
-                }
-            }
+            ensure_Q_symmetry();
 
             // set psd calculated flag to false
-            is_Q_psd_calculated = false;
+            // is_Q_psd_calculated = false;
         }
 
         /*
             return if Q is a PSD matrix
+            eigen values are allowed to be more than -tolerance.
         */
-        bool is_Q_psd() {
+        bool is_Q_psd(T tolerance = 0) const {
             // compute of Q is psd on the fly, and store the result into m_is_Q_psd.
-            if(!is_Q_psd_calculated) {
+            // if(!is_Q_psd_calculated) {
                 Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
                 const auto& eigen_values = eigen_solver.eigenvalues();
 
-                m_is_Q_psd = true;
+                // m_is_Q_psd = true;
                 for(auto eigen_value: eigen_values) {
-                    if(eigen_value < 0) {
-                        m_is_Q_psd = false;
-                        break;
+                    // std::cout << eigen_value << std::endl;
+                    if(eigen_value.real() < -tolerance) {
+                        // m_is_Q_psd = false;
+                        // break;
+                        return false;
                     }
                 }
 
-                is_Q_psd_calculated = true;
-            }
+                // is_Q_psd_calculated = true;
+            // }
 
-            return m_is_Q_psd;
+            return true;
         }
 
         /*
@@ -311,6 +309,20 @@ class Problem {
             return true;
         }
 
+        T objective(const Vector& solution) const {
+            if(solution.rows() != num_vars()) {
+                throw std::domain_error(
+                    std::string("Problem has ")
+                    + std::to_string(num_vars())
+                    + std::string(" variables, but given solution has ")
+                    + std::to_string(solution.rows())
+                    + std::string(" rows.")
+                );
+            }
+
+            return (solution.transpose() * Q() * solution + c().transpose() * solution)(0, 0);
+        }
+
         template<typename S>
         friend std::ostream& operator<<(std::ostream& os, const Problem<S>& problem);
         template<typename S>
@@ -324,6 +336,14 @@ class Problem {
         bool m_is_Q_psd, is_Q_psd_calculated;
 
         static constexpr Eigen::NoChange_t no_change();
+
+        void ensure_Q_symmetry() {
+            for(Index i = 0; i < Q_mtr.rows(); i++) {
+                for (Index j = i+1; j < Q_mtr.cols(); j++) {
+                    Q_mtr(i, j) = Q_mtr(j, i) = (Q_mtr(i, j) / 2) + (Q_mtr(j, i) / 2);
+                }
+            }
+        }
 
 };
 
@@ -399,6 +419,8 @@ std::istream& operator>>(std::istream& is, Problem<T>& problem) {
             is >> problem.Q_mtr(i, j);
         }
     }
+
+    problem.ensure_Q_symmetry();
 
     for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
