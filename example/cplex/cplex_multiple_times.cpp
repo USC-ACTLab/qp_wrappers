@@ -14,10 +14,10 @@ int main() {
     QPWrappers::Problem<double>::Vector result;
     cplexEngine.init(problem, result);
 
-    for(int i = 0; i < 10000000; i++) {
+    for(int i = 0; i < 100; i++) {
         cplexEngine.next(problem, result);
 
-        std::cout << "verification: " << problem.verify(result, 1e-7) << std::endl;
+        std::cout << "verification: " << problem.verify(result, 1e-10) << std::endl;
         std::cout << "objective value: " << problem.objective(result) << std::endl;
     }
 

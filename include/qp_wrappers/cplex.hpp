@@ -82,6 +82,9 @@ namespace QPWrappers {
 
                     IloCplex cplex(model);
                     cplex.setParam(IloCplex::Param::Simplex::Tolerances::Feasibility, feasibility_tolerance);
+                    cplex.setParam(IloCplex::Param::RootAlgorithm, IloCplex::Primal);
+                    cplex.setOut(env.getNullStream());
+                    cplex.setWarning(env.getNullStream());
                     if(problem.is_Q_psd(psd_tolerance)) {
                         cplex.setParam(IloCplex::Param::OptimalityTarget, CPX_OPTIMALITYTARGET_OPTIMALCONVEX);
                     } else {
