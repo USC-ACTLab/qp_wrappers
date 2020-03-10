@@ -1,12 +1,16 @@
 #ifndef QPWRAPPERS_TYPES_HPP
 #define QPWRAPPERS_TYPES_HPP
 
-namespace qp_wrappers {
+namespace QPWrappers {
 
-enum return_type {
-    success,
-    infeasible,
-    parameter_related_infeasibility
+enum class OptReturnType {
+    Optimal,
+    Feasible,
+    Unbounded,
+    Infeasible,
+    Error,
+    Unknown,
+    InfeasibleOrUnbounded
 };
 
 }
