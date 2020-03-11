@@ -54,16 +54,6 @@ target_compile_definitions(
   CGAL_QP_NO_ASSERTIONS
 )
 
-
-add_executable(
-  linear_regression 
-  example/linear_regression/linear_regression.cpp
-)
-target_link_libraries(
-  linear_regression 
-  qp_wrappers
-)
-
 add_executable(
   general_solver 
   example/general_qp_solver/solver.cpp
@@ -88,5 +78,14 @@ add_executable(
 )
 target_link_libraries (
   gurobi_multiple_times
+  qp_wrappers
+)
+
+add_executable(
+  qpoases_multiple_times
+  example/qpoases/qpoases_multiple_times.cpp
+)
+target_link_libraries (
+  qpoases_multiple_times
   qp_wrappers
 )

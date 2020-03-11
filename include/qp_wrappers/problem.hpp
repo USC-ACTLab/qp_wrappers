@@ -163,23 +163,56 @@ class Problem {
         */
         bool is_Q_psd(T tolerance = 0) const {
             // compute of Q is psd on the fly, and store the result into m_is_Q_psd.
-            // if(!is_Q_psd_calculated) {
+            Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
+            const auto& eigen_values = eigen_solver.eigenvalues();
+
+            for(auto eigen_value: eigen_values) {
+                if(eigen_value.real() < -tolerance) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /*
+            Regulatizes Q to be a PSD if it is not and the minimum eigenvalue is not less than
+            psd_tolerance
+        */
+        void regularize_Q(T psd_tolerance = 0) {
+            Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
+            const auto& eigen_values = eigen_solver.eigenvalues();
+
+            T min_eig = std::numeric_limits<T>::max();
+            for(auto eigen_value: eigen_values) {
+                // std::cout << eigen_value.real() << std::endl;
+                min_eig = std::min(min_eig, eigen_value.real());
+            }
+            // std::cout << std::endl;
+            while(min_eig < 0 && min_eig >= -psd_tolerance) {
+                Q_mtr += Matrix::Identity(num_vars(), num_vars()) * psd_tolerance;
+
                 Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
                 const auto& eigen_values = eigen_solver.eigenvalues();
-
-                // m_is_Q_psd = true;
+                min_eig = std::numeric_limits<T>::max();
                 for(auto eigen_value: eigen_values) {
-                    // std::cout << eigen_value << std::endl;
-                    if(eigen_value.real() < -tolerance) {
-                        // m_is_Q_psd = false;
-                        // break;
-                        return false;
-                    }
+                    // std::cout << eigen_value.real() << std::endl;
+                    min_eig = std::min(min_eig, eigen_value.real());
                 }
+            }
+        }
 
-                // is_Q_psd_calculated = true;
-            // }
+        /*
+            return if Q is a PD matrix
+        */
+        bool is_Q_pd() const {
+            Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
+            const auto& eigen_values = eigen_solver.eigenvalues();
 
+            for(auto eigen_value: eigen_values) {
+                if(eigen_value.real() <= 0) {
+                    return false;
+                }
+            }
             return true;
         }
 
@@ -354,7 +387,7 @@ std::ostream& operator<<(std::ostream& os, const Problem<T>& problem) {
     os.precision(std::numeric_limits<T>::max_digits10);
 
     int n = problem.A_mtr.cols(), m = problem.A_mtr.rows();
-    os << n << " " << m << std::endl;
+    os << std::fixed << n << " " << m << std::endl;
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             os << problem.Q_mtr(i, j) << " ";
@@ -421,6 +454,7 @@ std::istream& operator>>(std::istream& is, Problem<T>& problem) {
     }
 
     problem.ensure_Q_symmetry();
+
 
     for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {

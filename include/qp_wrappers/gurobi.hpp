@@ -17,11 +17,10 @@ namespace QPWrappers {
         template<typename T>
         class Engine {
             public:
-                Engine() {
+                Engine(): psd_tolerance(0) {
                     env.set(GRB_IntParam_OutputFlag, 0);
                     env.set(GRB_DoubleParam_FeasibilityTol, 1e-6);
-                    env.set(GRB_DoubleParam_PSDTol, 0);
-                    env.set(GRB_IntParam_Method, 0);
+                    env.set(GRB_DoubleParam_PSDTol, psd_tolerance);
                     env.start();
                 }
 
@@ -45,6 +44,7 @@ namespace QPWrappers {
                     By how much are the eigenvalues of the Q matrix are allowed be below 0 during PSD check?
                 */
                 void setPSDCheckEigenvalueTolerance(T tolerance) {
+                    psd_tolerance = tolerance;
                     env.set(GRB_DoubleParam_PSDTol, tolerance);
                 }
 
@@ -80,8 +80,15 @@ namespace QPWrappers {
                     }
 
                     model.setObjective(obj_quad + obj_lin);
-                    model.optimize();
 
+
+                    if(problem.is_Q_psd(psd_tolerance)) {
+                        env.set(GRB_IntParam_Method, 0);
+                    } else {
+                        env.set(GRB_IntParam_Method, -1);
+                    }
+
+                    model.optimize();
                     auto status = model.get(GRB_IntAttr_Status);
 
                     if(status == GRB_OPTIMAL) {
@@ -128,6 +135,7 @@ namespace QPWrappers {
 
             private:
                 GRBEnv env;
+                T psd_tolerance;
 
                 void loadResult(GRBVar* vars, typename Problem<T>::Index var_count, typename Problem<T>::Vector& result) {
                     result.resize(var_count);

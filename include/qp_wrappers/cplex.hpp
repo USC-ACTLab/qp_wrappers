@@ -17,7 +17,7 @@ namespace QPWrappers {
         template<typename T>
         class Engine {
             public:
-                Engine(): feasibility_tolerance(1e-6), psd_tolerance(0) {
+                Engine(): feasibility_tolerance(1e-6)/*, psd_tolerance(0)*/ {
                 }
 
                 Engine(const Engine& rhs) = delete;
@@ -36,12 +36,12 @@ namespace QPWrappers {
                     feasibility_tolerance = tolerance;
                 }
 
-                /*
-                    By how much are the eigenvalues of the Q matrix are allowed be below 0 during PSD check?
-                */
-                void setPSDCheckEigenvalueTolerance(T tolerance) {
-                    psd_tolerance = tolerance;
-                }
+                // /*
+                //     By how much are the eigenvalues of the Q matrix are allowed be below 0 during PSD check?
+                // */
+                // void setPSDCheckEigenvalueTolerance(T tolerance) {
+                //     psd_tolerance = tolerance;
+                // }
 
                 /*
                     Solve the first intance of the set of problems.
@@ -81,11 +81,11 @@ namespace QPWrappers {
                     model.add(obj);
 
                     IloCplex cplex(model);
-                    cplex.setParam(IloCplex::Param::Simplex::Tolerances::Feasibility, feasibility_tolerance);
-                    cplex.setParam(IloCplex::Param::RootAlgorithm, IloCplex::Primal);
                     cplex.setOut(env.getNullStream());
                     cplex.setWarning(env.getNullStream());
-                    if(problem.is_Q_psd(psd_tolerance)) {
+                    if(problem.is_Q_psd()) {
+                        cplex.setParam(IloCplex::Param::Simplex::Tolerances::Feasibility, feasibility_tolerance);
+                        cplex.setParam(IloCplex::Param::RootAlgorithm, IloCplex::Primal);
                         cplex.setParam(IloCplex::Param::OptimalityTarget, CPX_OPTIMALITYTARGET_OPTIMALCONVEX);
                     } else {
                         cplex.setParam(IloCplex::Param::OptimalityTarget, CPX_OPTIMALITYTARGET_FIRSTORDER);
@@ -143,7 +143,7 @@ namespace QPWrappers {
             private:
 
                 T feasibility_tolerance;
-                T psd_tolerance;
+                // T psd_tolerance;
 
                 /*
                     Load solution result to the result.

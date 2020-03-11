@@ -1,100 +1,178 @@
-#ifndef QPWRAPPERS_QPOASES_HPP
-#define QPWRAPPERS_QPOASES_HPP
+#ifndef QPWRAPPERS_qpOASES_HPP
+#define QPWRAPPERS_qpOASES_HPP
 
-#include <Eigen/Dense>
 #include "problem.hpp"
-#include <qpOASES.hpp>
-#include <iostream>
 #include "types.hpp"
-#include <yaml-cpp/yaml.h>
-#include <optional>
+#include <iostream>
+#include <qpOASES/QProblem.hpp>
 
-namespace qp_wrappers {
-    namespace qpoases {
+namespace QPWrappers {
+    namespace qpOASES {
+        
+        /*
+            A QP engine that solves consecutive QP instances where the result of the previous
+            instance used as an initial guess to the next one unless an initial guess
+            is provided.
+        */
+        template<typename T>
+        class Engine {
+            static_assert(std::is_same<T, ::qpOASES::real_t>::value);
 
-        class solver {
             public:
-                solver() {
+                Engine(): psd_tolerance(0), nWSR(10000), initialized(false) {
                     options.setToDefault();
-                    options.printLevel = qpOASES::PL_NONE;
-                    nWSR = 10000;
+                    options.printLevel = ::qpOASES::PL_NONE;
                 }
 
-                solver(const std::string& path) {
-                    YAML::Node settings = YAML::LoadFile(path);
+                Engine(const Engine& rhs) = delete;
+                Engine& operator=(const Engine& rhs) = delete;
+
+                Engine(Engine&& rhs) = delete;
+                Engine& operator=(Engine&& rhs) = delete;
+
+                ~Engine() {
                 }
 
-                /**
-                    Save the settings to the file at the given path.
+                /*
+                    By how much are the eigenvalues of the Q matrix are allowed be below 0 during PSD check?
                 */
-                void save(const std::string& path) {
-                    
+                void setPSDCheckEigenvalueTolerance(T tolerance) {
+                    psd_tolerance = tolerance;
                 }
 
-                void set_options(const qpOASES::Options& options) {
-                    this->options = options;
+                void setnWSR(T nwsr) {
+                    nWSR = nwsr;
                 }
 
-                void set_nwsr(int nwsr) {
-                    this->nWSR = nwsr;
+                /*
+                    Solve the first intance of the set of problems.
+                    Load solution result to result.
+                */
+                OptReturnType init(const Problem<T>& problem, typename Problem<T>::Vector& result) {
+                    ::qpOASES::QProblem qpoases_problem = create_qpoases_problem(problem);
+
+                    auto return_value = qpoases_problem.init(
+                        problem.Q().data(),
+                        problem.c().data(),
+                        problem.A().data(),
+                        problem.lbx().data(),
+                        problem.ubx().data(),
+                        problem.lb().data(),
+                        problem.ub().data(),
+                        nWSR,
+                        NULL
+                    );
+
+                    OptReturnType ret_val = load_and_return_optimization_result(return_value, qpoases_problem, problem, result);
+
+                    if(ret_val == OptReturnType::Optimal) {
+                        initialized = true;
+                        previous_result = result;
+                    } else {
+                        initialized = false;
+                    }
+
+                    return ret_val;
                 }
 
-                return_type solve(
-                    const qp<qpOASES::real_t>& problem, 
-                    qp<qpOASES::real_t>::Vector& primal_soln, 
-                    std::optional<qp<qpOASES::real_t>::Vector> initial_guess = std::nullopt) {
+                /*
+                    Solve the next problem of the set of problems. Initializes the engine if not initialized before.
+                    If initialized, uses the previous result as the starting point.
+                */
+                OptReturnType next(const Problem<T>& problem, typename Problem<T>::Vector& result) {
+                    if(!initialized || problem.num_vars() != previous_result.rows()) {
+                        initialized = false;
+                        return init(problem, result);
+                    }
 
-                    qpOASES::QProblem qpoases_problem(problem.num_vars(), problem.num_constraints());
+                    ::qpOASES::QProblem qpoases_problem = create_qpoases_problem(problem);
+
+                    auto return_value = qpoases_problem.init(
+                        problem.Q().data(),
+                        problem.c().data(),
+                        problem.A().data(),
+                        problem.lbx().data(),
+                        problem.ubx().data(),
+                        problem.lb().data(),
+                        problem.ub().data(),
+                        nWSR,
+                        NULL,
+                        previous_result.data()
+                    );
+
+                    OptReturnType ret_val = load_and_return_optimization_result(return_value, qpoases_problem, problem, result);
+
+                    if(ret_val == OptReturnType::Optimal) {
+                        previous_result = result;
+                    }
+
+                    return ret_val;
+                }
+
+                /*
+                    Solve the next problem of the set of problems with the given initial guess.
+                */
+                OptReturnType next(const Problem<T>& problem, typename Problem<T>::Vector& result, const typename Problem<T>::Vector& initial_guess) {
+                    previous_result = initial_guess;
+                    initialized = true;
+
+                    return next(problem, result);
+                }
+
+            private:
+
+                /*
+                    Creates the qpOASES problem instance according to options stored, and the type of the problem
+                */
+                ::qpOASES::QProblem create_qpoases_problem(const Problem<T>& problem) {
+                    ::qpOASES::QProblem qpoases_problem;
+
+                    if(problem.is_Q_pd()) {
+                        qpoases_problem = ::qpOASES::QProblem(problem.num_vars(), problem.num_constraints(), ::qpOASES::HST_POSDEF);
+                        options.enableRegularisation = ::qpOASES::BT_FALSE;
+                    } else if(problem.is_Q_psd(psd_tolerance)) {
+                        qpoases_problem = ::qpOASES::QProblem(problem.num_vars(), problem.num_constraints(), ::qpOASES::HST_SEMIDEF);
+                        options.enableRegularisation = ::qpOASES::BT_TRUE;
+                    } else {
+                        qpoases_problem = ::qpOASES::QProblem(problem.num_vars(), problem.num_constraints(), ::qpOASES::HST_INDEF);
+                    }
+
                     qpoases_problem.setOptions(options);
 
-                    qpOASES::returnValue return_value;
-
-                    if(initial_guess) {
-                        return_value = 
-                        qpoases_problem.init(problem.Q().data(),
-                                            problem.c().data(),
-                                            problem.A().data(),
-                                            problem.lbx().data(),
-                                            problem.ubx().data(),
-                                            problem.lb().data(),
-                                            problem.ub().data(),
-                                            nWSR,
-                                            NULL,
-                                            initial_guess->data()
-                        );
-                    } else {
-                        return_value = 
-                        qpoases_problem.init(problem.Q().data(),
-                                            problem.c().data(),
-                                            problem.A().data(),
-                                            problem.lbx().data(),
-                                            problem.ubx().data(),
-                                            problem.lb().data(),
-                                            problem.ub().data(),
-                                            nWSR,
-                                            NULL
-                        );
-                    }
-
-                    if(return_value == qpOASES::SUCCESSFUL_RETURN) {
-                        primal_soln.resize(problem.num_vars());
-                        qpoases_problem.getPrimalSolution(primal_soln.data());
-                        return success;
-                    } else if (return_value == qpOASES::RET_MAX_NWSR_REACHED) {
-                        return parameter_related_infeasibility;
-                    } else if (return_value == qpOASES::RET_INIT_FAILED) {
-                        return infeasible;
-                    } else {
-                        std::cerr << "what?" << std::endl;
-                        exit(0);
-                    }
+                    return qpoases_problem;
                 }
-            private:
-                qpOASES::Options options;
-                int nWSR;
+
+                /*
+                    Loads solution from qpoases problem instance to the result if it is solved in the given
+                    qpoases_problem.
+                */
+                OptReturnType load_and_return_optimization_result(::qpOASES::returnValue return_value, 
+                                                               const ::qpOASES::QProblem& qpoases_problem, 
+                                                               const Problem<T>& problem,
+                                                               typename Problem<T>::Vector& result) 
+                {
+                    if(return_value == ::qpOASES::SUCCESSFUL_RETURN) {
+                        result.resize(problem.num_vars());
+                        qpoases_problem.getPrimalSolution(result.data());
+                        return OptReturnType::Optimal;
+                    } else if (return_value == ::qpOASES::RET_MAX_NWSR_REACHED) {
+                        return OptReturnType::Error;
+                    } else if(return_value == ::qpOASES::RET_INIT_FAILED) {
+                        return OptReturnType::Infeasible;
+                    }
+
+                    return OptReturnType::Unknown;
+                }
+
+                bool initialized;
+                typename Problem<T>::Vector previous_result;
+
+                T psd_tolerance;
+                ::qpOASES::int_t nWSR;
+                ::qpOASES::Options options;
+
+
         };
-
-
     }
 }
 
