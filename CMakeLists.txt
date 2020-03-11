@@ -81,3 +81,12 @@ target_link_libraries (
   cplex_multiple_times
   qp_wrappers
 )
+
+add_executable(
+  gurobi_multiple_times
+  example/gurobi/gurobi_multiple_times.cpp
+)
+target_link_libraries (
+  gurobi_multiple_times
+  qp_wrappers
+)
