@@ -89,3 +89,22 @@ target_link_libraries (
   qpoases_multiple_times
   qp_wrappers
 )
+
+add_executable(
+  osqp_multiple_times
+  example/osqp/osqp_multiple_times.cpp
+)
+target_link_libraries (
+  osqp_multiple_times
+  qp_wrappers
+)
+
+add_executable(
+  mpc_solver
+  example/mpc/mpc_solver.cpp
+)
+target_link_libraries (
+  mpc_solver
+  qp_wrappers
+  stdc++fs
+)

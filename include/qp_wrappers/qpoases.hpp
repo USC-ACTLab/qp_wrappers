@@ -120,7 +120,6 @@ namespace QPWrappers {
                 }
 
             private:
-
                 /*
                     Creates the qpOASES problem instance according to options stored, and the type of the problem
                 */
