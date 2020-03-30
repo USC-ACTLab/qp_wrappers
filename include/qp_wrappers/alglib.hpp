@@ -8,13 +8,13 @@
 #include <iostream>
 #include <limits>
 
-namespace qp_wrappers {
-namespace alglib {  
-  class solver {
+namespace QPWrappers {
+namespace ALGLIB {  
+  class Solver {
   public:
-    solver() {}
+    Solver() {}
 
-    return_type solve(const qp<double>& problem, typename qp<double>::Vector& primal_solution) {
+    ReturnType solve(const Problem<double>& problem, typename Problem<double>::Vector& primal_solution) const {
 
       ::alglib::real_2d_array q, a;
       // q.setcontent(problem.Q().data());
@@ -90,12 +90,12 @@ namespace alglib {
       std::cout << "term type: " << rep.terminationtype << std::endl; 
       if(rep.terminationtype > 0) {
         primal_solution.resize(problem.num_vars());
-        for(typename qp<double>::Index i = 0; i < problem.num_vars(); i++) {
+        for(typename Problem<double>::Index i = 0; i < problem.num_vars(); i++) {
           primal_solution(i) = x(i);
         }
-        return success;
+        return ReturnType::success;
       } else {
-        return infeasible;
+        return ReturnType::failure;
       }
     }
 

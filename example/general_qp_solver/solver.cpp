@@ -10,10 +10,47 @@
 #include <chrono>
 #include <ctime>
 
+
+#include <mutex>
+#include <optional>
+#include <future>
+#include <functional>
+#include <thread>
+
+std::mutex print_mutex;
+
+template<typename Solver, typename Problem>
+double run(const Solver& solver, const Problem& problem, std::string name) {
+    typename Problem::Vector soln;
+    auto start = std::chrono::system_clock::now();
+    QPWrappers::ReturnType return_value;
+    try {
+        return_value = solver.solve(problem, soln);
+    } catch(...) {
+        return_value = QPWrappers::ReturnType::failure;
+    }
+    auto end = std::chrono::system_clock::now();
+
+    std::unique_lock<std::mutex> lck(print_mutex);
+
+    if(return_value == QPWrappers::ReturnType::success) {
+        bool verif = problem.verify(soln, 1e-5);
+        std::cout << name << " success" << std::endl;
+        // std::cout << name << " ### solution ###" << std::endl;
+        // std::cout << soln << std::endl;
+        std::cout << name << " verification: " << verif << std::endl;
+    } else {
+        std::cout << name << " failed" << std::endl;
+    }
+
+    return std::chrono::duration<double>(end - start).count();
+}
+
 int main() {
 
 
-    qp_wrappers::qp<double> problem(0);
+    using ProblemType = QPWrappers::Problem<double>;
+    ProblemType problem(0);
     std::cin >> problem;
 
     bool is_consistent = problem.is_consistent();
@@ -25,102 +62,60 @@ int main() {
 //     std::cout << "no CGAL_QP_NO_ASSERTIONS" << std::endl;
 // #endif
 
-    auto alglib_start = std::chrono::system_clock::now();
-    qp_wrappers::qp<double>::Vector alglib_soln;
-    qp_wrappers::alglib::solver alglib;
-    qp_wrappers::return_type alglib_ret = alglib.solve(problem, alglib_soln);
-    std::cout << "alglib: " << alglib_ret << std::endl;
-    if(alglib_ret == qp_wrappers::success) {
-        std::cout << alglib_soln << std::endl;
-    }
-    auto alglib_end = std::chrono::system_clock::now();
-    bool alglib_verif = problem.verify(alglib_soln);
-    std::cout << "alglib verification: " << alglib_verif << std::endl;
+
+    // QPWrappers::OSQP::Solver osqp;
+    QPWrappers::qpOASES::Solver qpoases;
+    // QPWrappers::CGAL::Solver cgal;
+    QPWrappers::GUROBI::Solver gurobi;
+    QPWrappers::CPLEX::Solver cplex;
+    // QPWrappers::ALGLIB::Solver alglib;
+
+    
+    // std::packaged_task<double(QPWrappers::OSQP::Solver, ProblemType, std::string)> osqp_task(run<QPWrappers::OSQP::Solver, ProblemType>);
+    std::packaged_task<double(QPWrappers::qpOASES::Solver, ProblemType, std::string)> qpoases_task(run<QPWrappers::qpOASES::Solver, ProblemType>);
+    // std::packaged_task<double(QPWrappers::CGAL::Solver, ProblemType, std::string)> cgal_task(run<QPWrappers::CGAL::Solver, ProblemType>);
+    std::packaged_task<double(QPWrappers::GUROBI::Solver, ProblemType, std::string)> gurobi_task(run<QPWrappers::GUROBI::Solver, ProblemType>);
+    std::packaged_task<double(QPWrappers::CPLEX::Solver, ProblemType, std::string)> cplex_task(run<QPWrappers::CPLEX::Solver, ProblemType>);
+    // std::packaged_task<double(QPWrappers::ALGLIB::Solver, ProblemType)> alglib_task(run<QPWrappers::ALGLIB::Solver, ProblemType>);
 
 
+    // std::future<double> osqp_time = osqp_task.get_future();
+    std::future<double> qpoases_time = qpoases_task.get_future();
+    // std::future<double> cgal_time = cgal_task.get_future();
+    std::future<double> gurobi_time = gurobi_task.get_future();
+    std::future<double> cplex_time = cplex_task.get_future();
+    // std::future<double> alglib_time = alglib_task.get_future();
 
-    auto osqp_start = std::chrono::system_clock::now();
-    qp_wrappers::qp<double>::Vector osqp_soln;
-    qp_wrappers::osqp::solver osqp;
-    qp_wrappers::return_type osqp_ret = osqp.solve(problem, osqp_soln);
-    std::cout << "osqp: " << osqp_ret << std::endl;
-    if(osqp_ret == qp_wrappers::success) {
-        std::cout << osqp_soln << std::endl;
-    }
-    auto osqp_end = std::chrono::system_clock::now();
-    bool osqp_verif = problem.verify(osqp_soln);
-    std::cout << "osqp verification: " << osqp_verif << std::endl;
+    // std::thread osqp_thread(std::move(osqp_task), osqp, problem, "OSQP");
+    std::thread qpoases_thread(std::move(qpoases_task), qpoases, problem, "qpOASES");
+    // std::thread cgal_thread(std::move(cgal_task), cgal, problem, "CGAL");
+    std::thread gurobi_thread(std::move(gurobi_task), gurobi, problem, "GUROBI");
+    std::thread cplex_thread(std::move(cplex_task), cplex, problem, "CPLEX");
+    // std::thread alglib_thread(std::move(alglib_task), alglib, problem, "ALGLIB");
 
+    // osqp_thread.join();
+    qpoases_thread.join();
+    // cgal_thread.join();
+    gurobi_thread.join();
+    cplex_thread.join();
+    // alglib_thread.join();
 
-
-    auto qpoases_start = std::chrono::system_clock::now();
-    qp_wrappers::qp<double>::Vector qpoases_soln;
-    qp_wrappers::qpoases::solver qpoases;
-    qp_wrappers::return_type qpoases_ret = qpoases.solve(problem, qpoases_soln);
-    std::cout << "qpoases: " << qpoases_ret << std::endl;
-    if(qpoases_ret == qp_wrappers::success) {
-        std::cout << qpoases_soln << std::endl;
-    }
-    auto qpoases_end = std::chrono::system_clock::now();
-    bool qpoases_verif = problem.verify(qpoases_soln);
-    std::cout << "qpoases verification: " << qpoases_verif << std::endl;
-
-
-
-    auto cgal_start = std::chrono::system_clock::now();
-    qp_wrappers::qp<double>::Vector cgal_soln;
-    qp_wrappers::cgal::solver cgal;
-    qp_wrappers::return_type cgal_ret = cgal.solve(problem, cgal_soln);
-    std::cout << "cgal: " << cgal_ret << std::endl;
-    if(cgal_ret == qp_wrappers::success) {
-        std::cout << cgal_soln << std::endl;
-    }
-    auto cgal_end = std::chrono::system_clock::now();
-    bool cgal_verif = problem.verify(cgal_soln);
-    std::cout << "cgal verification: " << cgal_verif << std::endl;
-
-
-
-
-    auto gurobi_start = std::chrono::system_clock::now();
-    qp_wrappers::qp<double>::Vector gurobi_soln;
-    qp_wrappers::gurobi::solver gurobi;
-    qp_wrappers::return_type gurobi_ret = gurobi.solve(problem, gurobi_soln);
-    std::cout << "gurobi: " << gurobi_ret << std::endl;
-    if(gurobi_ret == qp_wrappers::success) {
-        std::cout << gurobi_soln << std::endl;
-    }
-    auto gurobi_end = std::chrono::system_clock::now();
-    bool gurobi_verif = problem.verify(gurobi_soln);
-    std::cout << "gurobi verification: " << gurobi_verif << std::endl;
-
-
-
-    auto cplex_start = std::chrono::system_clock::now();
-    qp_wrappers::qp<double>::Vector cplex_soln;
-    qp_wrappers::cplex::solver cplex;
-    qp_wrappers::return_type cplex_ret = cplex.solve(problem, cplex_soln);
-    std::cout << "cplex: " << cplex_ret << std::endl;
-    if(cplex_ret == qp_wrappers::success) {
-        std::cout << cplex_soln << std::endl;
-    }
-    auto cplex_end = std::chrono::system_clock::now();
-    bool cplex_verif = problem.verify(cplex_soln);
-    std::cout << "cplex verification: " << cplex_verif << std::endl;
-
+    // double osqp_real_time = osqp_time.get();
+    double qpoases_real_time = qpoases_time.get();
+    // double cgal_real_time = cgal_time.get();
+    double gurobi_real_time = gurobi_time.get();
+    double cplex_real_time = cplex_time.get();
+    // double alglib_real_time = alglib_time.get();
 
 
 
     std::cout << std::endl << "Run durations:" << std::endl <<
-                 "\tosqp: " <<  std::chrono::duration<double>(osqp_end - osqp_start).count() << std::endl << 
-                 "\tqpoases: " <<  std::chrono::duration<double>(qpoases_end - qpoases_start).count() << std::endl <<
-                 "\tcgal: " <<  std::chrono::duration<double>(cgal_end - cgal_start).count() << std::endl << 
-                 "\tgurobi: "<< std::chrono::duration<double>(gurobi_end - gurobi_start).count() << std::endl <<
-                 "\tcplex: " <<  std::chrono::duration<double>(cplex_end - cplex_start).count() << std::endl <<
-                 "\talglib: " <<  std::chrono::duration<double>(alglib_end - alglib_start).count() << std::endl;
-
-
-
+                 /*"\tosqp: " <<  osqp_real_time << std::endl << */
+                 "\tqpoases: " << qpoases_real_time << std::endl <<
+                 /*"\tcgal: " << cgal_real_time << std::endl << */
+                 "\tgurobi: "<< gurobi_real_time << std::endl <<
+                 "\tcplex: " << cplex_real_time << std::endl <<
+                 /*"\talglib: " << alglib_real_time <<*/ std::endl;
 
 
 

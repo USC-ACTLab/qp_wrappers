@@ -8,41 +8,41 @@
 #include <limits>
 #include <CGAL/Gmpz.h>
 
-namespace qp_wrappers{
+namespace QPWrappers{
 
-namespace cgal {
+namespace CGAL {
 
-    class solver {
+    class Solver {
         public:
 
-            solver() {
+            Solver() {
 
             }
 
             template<typename T>
-            return_type solve(const qp<T>& problem, typename qp<T>::Vector& primal_solution) {
+            ReturnType solve(const Problem<T>& problem, typename Problem<T>::Vector& primal_solution) const {
                 // typedef CGAL::MP_Float ET;
-                typedef CGAL::Gmpzf ET;
-                typedef CGAL::Quadratic_program<T> Program;
-                typedef CGAL::Quadratic_program_solution<ET> Solution;
+                typedef ::CGAL::Gmpzf ET;
+                typedef ::CGAL::Quadratic_program<T> Program;
+                typedef ::CGAL::Quadratic_program_solution<ET> Solution;
 
-                typename qp<T>::Matrix A(problem.num_constraints() * 2, problem.num_vars());
-                typename qp<T>::Vector ub(problem.num_constraints() * 2);
-                std::vector<CGAL::Comparison_result> comparisons(problem.num_constraints() * 2);
+                typename Problem<T>::Matrix A(problem.num_constraints() * 2, problem.num_vars());
+                typename Problem<T>::Vector ub(problem.num_constraints() * 2);
+                std::vector<::CGAL::Comparison_result> comparisons(problem.num_constraints() * 2);
                 int constraint_count = 0;
                 for(int i = 0; i < problem.num_constraints(); i++) {
                     if(problem.lb()(i) == problem.ub()(i)) {
-                        comparisons[constraint_count] = CGAL::EQUAL;
+                        comparisons[constraint_count] = ::CGAL::EQUAL;
                         A.row(constraint_count) = problem.A().row(i);
                         ub(constraint_count) = problem.ub()(i);
                         constraint_count++;
                     } else {
-                        comparisons[constraint_count] = CGAL::SMALLER;
+                        comparisons[constraint_count] = ::CGAL::SMALLER;
                         A.row(constraint_count) = problem.A().row(i);
                         ub(constraint_count) = problem.ub()(i);
                         constraint_count++;
 
-                        comparisons[constraint_count] = CGAL::SMALLER;
+                        comparisons[constraint_count] = ::CGAL::SMALLER;
                         A.row(constraint_count) = -1 * problem.A().row(i);
                         ub(constraint_count) = -1 * problem.lb()(i);
                         constraint_count++;
@@ -55,7 +55,7 @@ namespace cgal {
                 // std::cout << problem.A.rows() << " " << problem.A.cols() << " " 
                         //   << problem.variable_count << " " << A.rows() << " " << A.cols() << " " << ub.rows() << std::endl;
 
-                Program qpr(CGAL::SMALLER, false, std::numeric_limits<T>::lowest(), false, std::numeric_limits<T>::max());
+                Program qpr(::CGAL::SMALLER, false, std::numeric_limits<T>::lowest(), false, std::numeric_limits<T>::max());
                 
                 for(int i = 0; i < problem.num_vars(); i++) {
                     for(int j = 0; j <= i; j++) {
@@ -128,11 +128,11 @@ namespace cgal {
                 // }
                 // std::cout << std::endl;
 
-                Solution s = CGAL::solve_quadratic_program(qpr, ET());
+                Solution s = ::CGAL::solve_quadratic_program(qpr, ET());
                 assert(s.solves_quadratic_program(qpr));
 
                 if(s.is_infeasible())
-                    return infeasible;
+                    return ReturnType::failure;
 
                 primal_solution.resize(problem.num_vars());
                 for(int i = 0; i < problem.num_vars(); i++) {
@@ -141,10 +141,10 @@ namespace cgal {
                     */
                     const auto& quot = *(s.variable_values_begin() + i);
                     // std::cout << quot << std::endl;
-                    primal_solution(i) = CGAL::to_double(quot);
+                    primal_solution(i) = ::CGAL::to_double(quot);
                 }
 
-                return success;
+                return ReturnType::success;
             }
         private:
     };

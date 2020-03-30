@@ -139,7 +139,6 @@ namespace QPWrappers {
                         initialized = false;
                         return init(problem, result);
                     }
-
                     OSQPWorkspace* work;
 
                     // setup data start
