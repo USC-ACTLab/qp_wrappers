@@ -103,9 +103,9 @@ class Problem {
                 );
             }
 
-            A_mtr.conservativeResize(A_mtr.rows() + 1, no_change);
-            ub_mtr.conservativeResize(ub_mtr.rows() + 1, no_change);
-            lb_mtr.conservativeResize(lb_mtr.rows() + 1, no_change);
+            A_mtr.conservativeResize(A_mtr.rows() + 1, Eigen::NoChange);
+            ub_mtr.conservativeResize(ub_mtr.rows() + 1, Eigen::NoChange);
+            lb_mtr.conservativeResize(lb_mtr.rows() + 1, Eigen::NoChange);
 
             A_mtr.row(A_mtr.rows() - 1) = coeff;
             ub_mtr(ub_mtr.rows() - 1) = up;
