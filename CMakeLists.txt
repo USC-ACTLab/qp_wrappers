@@ -10,16 +10,10 @@ SET(DFLOAT OFF CACHE BOOL "osqp data type(OFF for double, ON for float)")
 SET(DLONG OFF CACHE BOOL "osqp index type (ON for long long int, OFF for int)")
 add_subdirectory(third_party/osqp)
 
-# SET(NDEBUG ON CACHE BOOL "cgal qp solver perf on")
-# SET(CGAL_QP_NO_ASSERTIONS ON CACHE BOOL "cgal qp solver perf on")
-find_package(CGAL REQUIRED OPTIONAL_COMPONENTS Core PATHS third_party/cgal)
 
 include(cmake/FindCPLEX.cmake)
 include(cmake/FindGUROBI.cmake)
 
-add_subdirectory(third_party/alglib-free)
-
-add_subdirectory(third_party/yaml-cpp)
 
 add_library(qp_wrappers INTERFACE)
 target_include_directories(
@@ -37,7 +31,6 @@ target_link_libraries(
   eigen 
   qpOASES 
   osqp 
-  CGAL::CGAL
   # cplex-library
   # cplex-concert
   ilocplex
@@ -45,8 +38,6 @@ target_link_libraries(
   ${CMAKE_DL_LIBS}
   ${GUROBI_CXX_LIBRARY}
   ${GUROBI_LIBRARY}
-  yaml-cpp
-  alglib-free
 )
 target_compile_definitions(
   qp_wrappers 
