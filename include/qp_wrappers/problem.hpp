@@ -158,6 +158,22 @@ class Problem {
         }
 
         /*
+        * Adds given matrix to the block of Q of the problem where
+        * block starts from row i and column j and spans Q.rows() rows
+        * and Q.cols() columns
+        */
+        void add_Q_block(Index i, Index j, const Matrix& Q) {
+            if(i + Q.rows() - 1 >= Q_mtr.rows() || j + Q.cols() - 1 >= Q_mtr.cols()) {
+                throw std::domain_error(
+                    std::string("given Q block matrix runs of the Q of the problem")
+                );
+            }
+
+            Q_mtr.block(i, j, Q.rows(), Q.cols()) += Q;
+            ensure_Q_symmetry();
+        }
+
+        /*
             return if Q is a PSD matrix
             eigen values are allowed to be more than -tolerance.
         */
