@@ -41,6 +41,20 @@ class Problem {
             ubx_mtr.setConstant(N, std::numeric_limits<T>::max());
         }
 
+        /*
+        * Resets the problem so that there is constraint, objective is 0, and
+        * there is no upper and lower limit
+        */
+        void reset() {
+            A_mtr = Matrix(0, this->num_vars());
+            lb_mtr = Vector(0);
+            ub_mtr = Vector(0);
+            Q_mtr.setZero();
+            c_mtr.setZero();
+            lbx_mtr.setConstant(this->num_vars(), std::numeric_limits<T>::lowest());
+            ubx_mtr.setConstant(this->num_vars(), std::numeric_limits<T>::max());
+        }
+
         inline bool is_ubx_unbounded(Index var_idx) const {
             return ubx_mtr(var_idx) == std::numeric_limits<T>::max();
         }
@@ -163,7 +177,7 @@ class Problem {
         * and Q.cols() columns
         */
         void add_Q_block(Index i, Index j, const Matrix& Q) {
-            if(i + Q.rows() - 1 >= Q_mtr.rows() || j + Q.cols() - 1 >= Q_mtr.cols()) {
+            if(i + Q.rows() > Q_mtr.rows() || j + Q.cols() > Q_mtr.cols()) {
                 throw std::domain_error(
                     std::string("given Q block matrix runs of the Q of the problem")
                 );
@@ -246,6 +260,20 @@ class Problem {
                             );
             }
             c_mtr += c;
+        }
+
+        /*
+        * Adds given vector to the block of c of the problem where
+        * block starts from row i and spans c.rows() rows
+        */
+        void add_c_block(Index i, const Vector& c) {
+            if(i + c.rows() > c_mtr.rows()) {
+                throw std::domain_error(
+                    std::string("given c block is out of bounds of the original c")
+                );
+            }
+
+            c_mtr.block(i, 0, c.rows(), 1) += c;
         }
 
 
