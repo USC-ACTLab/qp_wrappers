@@ -196,7 +196,8 @@ class Problem {
             Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
             const auto& eigen_values = eigen_solver.eigenvalues();
 
-            for(auto eigen_value: eigen_values) {
+            for(Index i = 0; i < eigen_values.rows(); i++) {
+                auto eigen_value = eigen_values(i);
                 if(eigen_value.real() < -tolerance) {
                     return false;
                 }
@@ -213,8 +214,8 @@ class Problem {
             const auto& eigen_values = eigen_solver.eigenvalues();
 
             T min_eig = std::numeric_limits<T>::max();
-            for(auto eigen_value: eigen_values) {
-                // std::cout << eigen_value.real() << std::endl;
+            for(Index i = 0; i < eigen_values.rows(); i++) {
+                auto eigen_value = eigen_values(i);
                 min_eig = std::min(min_eig, eigen_value.real());
             }
             // std::cout << std::endl;
@@ -224,8 +225,8 @@ class Problem {
                 Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
                 const auto& eigen_values = eigen_solver.eigenvalues();
                 min_eig = std::numeric_limits<T>::max();
-                for(auto eigen_value: eigen_values) {
-                    // std::cout << eigen_value.real() << std::endl;
+                for(Index i = 0; i < eigen_values.rows(); i++) {
+                    auto eigen_value = eigen_values(i);
                     min_eig = std::min(min_eig, eigen_value.real());
                 }
             }
@@ -238,7 +239,8 @@ class Problem {
             Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
             const auto& eigen_values = eigen_solver.eigenvalues();
 
-            for(auto eigen_value: eigen_values) {
+            for(Index i = 0; i < eigen_values.rows(); i++) {
+                auto eigen_value = eigen_values(i);
                 if(eigen_value.real() <= 0) {
                     return false;
                 }

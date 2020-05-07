@@ -3,17 +3,14 @@ cmake_minimum_required(VERSION 3.10)
 project(qp_wrappers)
 set (CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(third_party/eigen)
 add_subdirectory(third_party/qpoases-mirror)
 
 SET(DFLOAT OFF CACHE BOOL "osqp data type(OFF for double, ON for float)")
 SET(DLONG OFF CACHE BOOL "osqp index type (ON for long long int, OFF for int)")
 add_subdirectory(third_party/osqp)
-
-
 include(cmake/FindCPLEX.cmake)
 include(cmake/FindGUROBI.cmake)
-
+find_package(Eigen3 REQUIRED)
 
 add_library(qp_wrappers INTERFACE)
 target_include_directories(
@@ -24,11 +21,11 @@ target_include_directories(
   third_party/osqp/include
   ${CGAL_INCLUDE_DIRECTORIES}
   ${GUROBI_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIR}
 )
 target_link_libraries(
   qp_wrappers 
-  INTERFACE 
-  eigen 
+  INTERFACE
   qpOASES 
   osqp 
   # cplex-library
@@ -45,14 +42,6 @@ target_compile_definitions(
   CGAL_QP_NO_ASSERTIONS
 )
 
-add_executable(
-  general_solver 
-  example/general_qp_solver/solver.cpp
-)
-target_link_libraries(
-  general_solver
-  qp_wrappers
-)
 
 add_executable(
   cplex_multiple_times
