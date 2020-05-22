@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.1)
 
 project(qp_wrappers)
 set (CMAKE_CXX_STANDARD 17)
@@ -19,7 +19,6 @@ target_include_directories(
   include 
   third_party/qpoases-mirror/include
   third_party/osqp/include
-  ${CGAL_INCLUDE_DIRECTORIES}
   ${GUROBI_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
 )
@@ -27,21 +26,12 @@ target_link_libraries(
   qp_wrappers 
   INTERFACE
   qpOASES 
-  osqp 
-  # cplex-library
-  # cplex-concert
+  osqp
   ilocplex
-  # cplex-cp
   ${CMAKE_DL_LIBS}
   ${GUROBI_CXX_LIBRARY}
   ${GUROBI_LIBRARY}
 )
-target_compile_definitions(
-  qp_wrappers 
-  INTERFACE 
-  CGAL_QP_NO_ASSERTIONS
-)
-
 
 add_executable(
   cplex_multiple_times
@@ -50,6 +40,17 @@ add_executable(
 target_link_libraries (
   cplex_multiple_times
   qp_wrappers
+)
+
+add_library(
+  qp_wrappers_problem
+  INTERFACE
+)
+target_include_directories(
+  qp_wrappers_problem
+  INTERFACE
+  include
+  ${EIGEN3_INCLUDE_DIR}
 )
 
 add_executable(
