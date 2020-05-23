@@ -33,15 +33,6 @@ target_link_libraries(
   ${GUROBI_LIBRARY}
 )
 
-add_executable(
-  cplex_multiple_times
-  example/cplex/cplex_multiple_times.cpp
-)
-target_link_libraries (
-  cplex_multiple_times
-  qp_wrappers
-)
-
 add_library(
   qp_wrappers_problem
   INTERFACE
@@ -51,6 +42,15 @@ target_include_directories(
   INTERFACE
   include
   ${EIGEN3_INCLUDE_DIR}
+)
+
+add_executable(
+  cplex_multiple_times
+  example/cplex/cplex_multiple_times.cpp
+)
+target_link_libraries (
+  cplex_multiple_times
+  qp_wrappers
 )
 
 add_executable(
