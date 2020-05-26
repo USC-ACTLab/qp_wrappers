@@ -119,6 +119,8 @@ namespace QPWrappers {
                     return next(problem, result);
                 }
 
+                void setFeasibilityTolerance(T val) {}
+
             private:
                 /*
                     Creates the qpOASES problem instance according to options stored, and the type of the problem
