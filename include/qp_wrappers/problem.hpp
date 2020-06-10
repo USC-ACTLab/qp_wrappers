@@ -34,11 +34,136 @@ class Problem {
                 A_mtr(M, N),
                 lb_mtr(M),
                 ub_mtr(M),
-                is_Q_psd_calculated(false) {
+                soft_convertible(M),
+                soft_weights(M){
             Q_mtr.setConstant(N, N, 0);
             c_mtr.setConstant(N, 0);
             lbx_mtr.setConstant(N, std::numeric_limits<T>::lowest());
             ubx_mtr.setConstant(N, std::numeric_limits<T>::max());
+        }
+
+
+        /*
+         * Converts the problem to the version with soft constraints
+         * where first num_vars() variables are the original variables
+         * and the rest are the slack variables
+         */
+        Problem<T> convert_to_soft()
+            const {
+            Index equality_constraint_count = 0;
+            Index inequality_constraint_count = 0;
+
+            for(Index i = 0; i < this->num_constraints(); i++) {
+                if(this->soft_convertible[i]) {
+                    if(this->lb()(i) == this->ub()(i)) {
+                        equality_constraint_count++;
+                    } else {
+                        if(this->lb()(i) != std::numeric_limits<T>::lowest()) {
+                            inequality_constraint_count++;
+                        }
+                        if(this->ub()(i) != std::numeric_limits<T>::max()) {
+                            inequality_constraint_count++;
+                        }
+                    }
+                }
+            }
+
+            Index new_num_vars = this->num_vars() + inequality_constraint_count;
+            Problem<T> new_problem(new_num_vars);
+
+            // carry Q
+            Matrix carry_Q(new_num_vars, new_num_vars);
+            carry_Q.setZero();
+            carry_Q.block(0, 0, this->num_vars(), this->num_vars()) = this->Q();
+            new_problem.add_Q(carry_Q);
+
+            // carry c
+            Vector carry_c(new_num_vars);
+            carry_c.setZero();
+            carry_c.block(0, 0, this->num_vars(), 1) = this->c();
+            new_problem.add_c(carry_c);
+
+            // carry lbx, ubx
+            for(Index i = 0; i < this->num_vars(); i++) {
+                new_problem.set_var_limits(i, this->lbx()(i), this->ubx()(i));
+            }
+
+            // lbx and ubx for slack variables
+            for(Index i = 0; i < inequality_constraint_count; i++) {
+                new_problem.set_var_limits(this->num_vars() + i,
+                        0, std::numeric_limits<T>::max());
+            }
+
+            Index next_slack_index = 0;
+            for(Index i = 0; i < this->num_constraints(); i++) {
+                if(this->soft_convertible[i]) {
+                    if (this->lb()(i) == this->ub()(i)) {
+                        // equality constraint
+                        Matrix Q_addition = 2 * soft_weights(i)
+                                            * this->A().row(i).transpose()
+                                            * this->A().row(i);
+
+                        new_problem.add_Q_block(0, 0, Q_addition);
+
+                        Vector c_addition = -2 * soft_weights(i)
+                                            * this->lb()(i)
+                                            * this->A().row(i).transpose();
+
+                        new_problem.add_c_block(0, c_addition);
+                    } else {
+                        if (this->lb()(i) != std::numeric_limits<T>::lowest()) {
+                            // lb ineq constraint
+                            RowVector coeff(new_num_vars);
+                            coeff.setZero();
+                            coeff.block(0, 0, 1, this->num_vars())
+                                    = this->A().row(i);
+                            coeff(this->num_vars() + next_slack_index) = 1;
+
+                            new_problem.add_constraint(coeff, this->lb()(i),
+                                                       std::numeric_limits<T>::max());
+
+
+                            Vector c_addition(new_num_vars);
+                            c_addition.setZero();
+                            c_addition(this->num_vars() + next_slack_index)
+                                    = soft_weights(i);
+
+                            new_problem.add_c(c_addition);
+
+                            next_slack_index++;
+                        }
+                        if (this->ub()(i) != std::numeric_limits<T>::max()) {
+                            // ub ineq constraint
+                            RowVector coeff(new_num_vars);
+                            coeff.setZero();
+                            coeff.block(0, 0, 1, this->num_vars())
+                                    = this->A().row(i);
+                            coeff(this->num_vars() + next_slack_index) = -1;
+
+                            new_problem.add_constraint(coeff,
+                                                       std::numeric_limits<T>::lowest(),
+                                                       this->ub()(i));
+
+                            Vector c_addition(new_num_vars);
+                            c_addition.setZero();
+                            c_addition(this->num_vars() + next_slack_index)
+                                    = soft_weights(i);
+
+                            new_problem.add_c(c_addition);
+
+                            next_slack_index++;
+                        }
+                    }
+                } else {
+                    RowVector coeff(new_num_vars);
+                    coeff.setZero();
+                    coeff.block(0, 0, 1, this->num_vars()) = this->A().row(i);
+                    new_problem.add_constraint(coeff
+                                    , this->lb()(i), this->ub()(i));
+                }
+            }
+
+            return new_problem;
         }
 
         /*
@@ -49,6 +174,8 @@ class Problem {
             A_mtr = Matrix(0, this->num_vars());
             lb_mtr = Vector(0);
             ub_mtr = Vector(0);
+            soft_convertible.clear();
+            soft_weights = Vector(0);
             Q_mtr.setZero();
             c_mtr.setZero();
             lbx_mtr.setConstant(this->num_vars(), std::numeric_limits<T>::lowest());
@@ -76,7 +203,9 @@ class Problem {
             After the operation, low <= coeff * x <= up is enforced by the
             row with index constraint_idx of A, lb, and ub.
         */
-        void set_constraint(Index constraint_idx, const RowVector& coeff, T low, T up) {
+        void set_constraint(Index constraint_idx, const RowVector& coeff,
+                            T low, T up, bool is_soft_convertible = false,
+                            T soft_weight = T(1)) {
             if(coeff.cols() != num_vars()) {
                 throw std::domain_error(
                     std::string("Problem has ")
@@ -100,13 +229,16 @@ class Problem {
             A_mtr.row(constraint_idx) = coeff;
             ub_mtr(constraint_idx) = up;
             lb_mtr(constraint_idx) = low;
+            soft_convertible[constraint_idx] = soft_convertible;
+            soft_weights(constraint_idx) = soft_weight;
         }
 
         /*
             Adds a new constraint which enforces
                 low <= coeff * x <= up
         */
-        void add_constraint(const RowVector& coeff, T low, T up) {
+        void add_constraint(const RowVector& coeff, T low, T up,
+                bool is_soft_convertible = false, T soft_weight = T(1)) {
             if(coeff.cols() != num_vars()) {
                 throw std::domain_error (
                     std::string("Problem has ")
@@ -120,10 +252,14 @@ class Problem {
             A_mtr.conservativeResize(A_mtr.rows() + 1, Eigen::NoChange);
             ub_mtr.conservativeResize(ub_mtr.rows() + 1, Eigen::NoChange);
             lb_mtr.conservativeResize(lb_mtr.rows() + 1, Eigen::NoChange);
+            soft_weights.conservativeResize(soft_weights.rows() + 1,
+                    Eigen::NoChange);
 
             A_mtr.row(A_mtr.rows() - 1) = coeff;
             ub_mtr(ub_mtr.rows() - 1) = up;
             lb_mtr(lb_mtr.rows() - 1) = low;
+            soft_weights(soft_weights.rows() - 1) = soft_weight;
+            soft_convertible.push_back(is_soft_convertible);
         }
 
         /*
@@ -167,8 +303,6 @@ class Problem {
 
             ensure_Q_symmetry();
 
-            // set psd calculated flag to false
-            // is_Q_psd_calculated = false;
         }
 
         /*
@@ -192,7 +326,7 @@ class Problem {
             eigen values are allowed to be more than -tolerance.
         */
         bool is_Q_psd(T tolerance = 0) const {
-            // compute of Q is psd on the fly, and store the result into m_is_Q_psd.
+            // compute of Q is psd on the fly
             Eigen::EigenSolver<Matrix> eigen_solver(Q_mtr, false);
             const auto& eigen_values = eigen_solver.eigenvalues();
 
@@ -320,8 +454,8 @@ class Problem {
             new_problem.ub_mtr = ub_mtr.template cast<S>();
             new_problem.lbx_mtr = lbx_mtr.template cast<S>();
             new_problem.ubx_mtr = ubx_mtr.template cast<S>();
-            new_problem.m_is_Q_psd = m_is_Q_psd;
-            new_problem.is_Q_psd_calculated = is_Q_psd_calculated;
+            new_problem.soft_convertible = soft_convertible;
+            new_problem.soft_weights = soft_weights.template cast<S>();
 
             return new_problem;
         }
@@ -412,7 +546,12 @@ class Problem {
 
         Matrix Q_mtr, A_mtr;
         Vector c_mtr, lb_mtr, ub_mtr, lbx_mtr, ubx_mtr;
-        bool m_is_Q_psd, is_Q_psd_calculated;
+
+        // soft_convertible[i] is  true if and only if i^th constraint
+        // must be converted to a soft constraint when convert_to_soft
+        // is called. soft_weights[i] has the weight of the conversion.
+        Vector soft_weights; // must have size num_constraints
+        std::vector<bool> soft_convertible; // must have size num_constraints
 
         static constexpr Eigen::NoChange_t no_change();
 
@@ -476,6 +615,16 @@ std::ostream& operator<<(std::ostream& os, const Problem<T>& problem) {
     }
     os << std::endl;
 
+    for(int i = 0; i < m; i++) {
+        os << problem.soft_weights(i) << " ";
+    }
+    os << std::endl;
+
+    for(int i = 0; i < m; i++) {
+        os << problem.soft_convertible[i] << " ";
+    }
+    os << std::endl;
+
     os.precision(before_precision);
 
     return os;
@@ -493,6 +642,9 @@ std::istream& operator>>(std::istream& is, Problem<T>& problem) {
     problem.A_mtr.resize(m, n);
     problem.lb_mtr.resize(m);
     problem.ub_mtr.resize(m);
+    problem.soft_weights.resize(m);
+    problem.soft_convertible.resize(m);
+
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             is >> problem.Q_mtr(i, j);
@@ -530,6 +682,17 @@ std::istream& operator>>(std::istream& is, Problem<T>& problem) {
     for(int i = 0; i < n; i++) {
         is >> problem.c_mtr(i);
     }
+
+    for(int i = 0; i < m; i++) {
+        is >> problem.soft_weights(i);
+    }
+
+    for(int i = 0; i < m; i++) {
+        bool a;
+        is >> a;
+        problem.soft_convertible[i] = a;
+    }
+
 
     return is;
 }
