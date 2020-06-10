@@ -99,13 +99,13 @@ class Problem {
                 if(this->soft_convertible[i]) {
                     if (this->lb()(i) == this->ub()(i)) {
                         // equality constraint
-                        Matrix Q_addition = 2 * soft_weights(i)
+                        Matrix Q_addition = 2 * this->soft_weights(i)
                                             * this->A().row(i).transpose()
                                             * this->A().row(i);
 
                         new_problem.add_Q_block(0, 0, Q_addition);
 
-                        Vector c_addition = -2 * soft_weights(i)
+                        Vector c_addition = -2 * this->soft_weights(i)
                                             * this->lb()(i)
                                             * this->A().row(i).transpose();
 
@@ -126,7 +126,7 @@ class Problem {
                             Vector c_addition(new_num_vars);
                             c_addition.setZero();
                             c_addition(this->num_vars() + next_slack_index)
-                                    = soft_weights(i);
+                                    = this->soft_weights(i);
 
                             new_problem.add_c(c_addition);
 
@@ -147,7 +147,7 @@ class Problem {
                             Vector c_addition(new_num_vars);
                             c_addition.setZero();
                             c_addition(this->num_vars() + next_slack_index)
-                                    = soft_weights(i);
+                                    = this->soft_weights(i);
 
                             new_problem.add_c(c_addition);
 
