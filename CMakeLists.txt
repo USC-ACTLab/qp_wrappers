@@ -19,6 +19,7 @@ target_include_directories(
   include 
   third_party/qpoases-mirror/include
   third_party/osqp/include
+  ${CPLEX_ILOCPLEX_INCLUDE_DIR}
   ${GUROBI_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
 )
@@ -38,10 +39,10 @@ add_library(
   INTERFACE
 )
 target_include_directories(
-  qp_wrappers_problem
-  INTERFACE
-  include
-  ${EIGEN3_INCLUDE_DIR}
+    qp_wrappers_problem
+    INTERFACE
+    include
+    ${EIGEN3_INCLUDE_DIR}
 )
 
 add_executable(
