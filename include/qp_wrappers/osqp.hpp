@@ -26,6 +26,7 @@ namespace QPWrappers {
                     osqp_set_default_settings(settings);
                     settings->alpha = 1.0;
                     settings->verbose = false;
+                    settings->max_iter = 1000000;
 //                    settings->max_iter = std::numeric_limits<c_int>::max();
                 }
 
